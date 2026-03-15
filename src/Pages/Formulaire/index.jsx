@@ -72,7 +72,7 @@ export default function Formulaire() {
   const [erreurs, setErreurs] = useState({});
   const [succes, setSucces] = useState(false);
 
-  // Pré-remplir si mode modification
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (modifierId) {
       const e = getEntreprise(modifierId);
@@ -92,7 +92,7 @@ export default function Formulaire() {
         });
       }
     }
-  }, [modifierId]);
+  }, [modifierId]); // on veut volontairement ne déclencher qu'au montage
 
   function set(champ, valeur) {
     setForm((prev) => ({ ...prev, [champ]: valeur }));
@@ -186,17 +186,15 @@ export default function Formulaire() {
         )}
 
         <form onSubmit={handleSubmit} className="form" noValidate>
-          {/* Infos principales */}
           <fieldset className="fieldset">
             <legend className="legend">Informations principales</legend>
-
             <div className="row2">
               <div className="champ">
                 <label className="label">
-                  Nom du commerce <span className="requis"> *</span>
+                  Nom du commerce <span className="requis">*</span>
                 </label>
                 <input
-                  className={`${"input"} ${erreurs.nom ? "inputErreur" : ""}`}
+                  className={`input${erreurs.nom ? " inputErreur" : ""}`}
                   type="text"
                   placeholder="ex : Boulangerie du Marché"
                   value={form.nom}
@@ -204,13 +202,12 @@ export default function Formulaire() {
                 />
                 {erreurs.nom && <p className="erreur">{erreurs.nom}</p>}
               </div>
-
               <div className="champ">
                 <label className="label">
                   Secteur d'activité <span className="requis">*</span>
                 </label>
                 <select
-                  className={`${"input"} ${erreurs.secteur ? "inputErreur" : ""}`}
+                  className={`input${erreurs.secteur ? " inputErreur" : ""}`}
                   value={form.secteur}
                   onChange={(e) => set("secteur", e.target.value)}
                 >
@@ -224,7 +221,6 @@ export default function Formulaire() {
                 {erreurs.secteur && <p className="erreur">{erreurs.secteur}</p>}
               </div>
             </div>
-
             <div className="champ">
               <label className="label">Description courte</label>
               <textarea
@@ -237,16 +233,14 @@ export default function Formulaire() {
             </div>
           </fieldset>
 
-          {/* Coordonnées */}
           <fieldset className="fieldset">
             <legend className="legend">Coordonnées</legend>
-
             <div className="champ">
               <label className="label">
                 Adresse <span className="requis">*</span>
               </label>
               <input
-                className={`${"input"} ${erreurs.adresse ? "inputErreur" : ""}`}
+                className={`input${erreurs.adresse ? " inputErreur" : ""}`}
                 type="text"
                 placeholder="12 rue du Marché, 64000 Pau"
                 value={form.adresse}
@@ -254,12 +248,11 @@ export default function Formulaire() {
               />
               {erreurs.adresse && <p className="erreur">{erreurs.adresse}</p>}
             </div>
-
             <div className="row2">
               <div className="champ">
                 <label className="label">Téléphone</label>
                 <input
-                  className={`${"input"} ${erreurs.telephone ? "inputErreur" : ""}`}
+                  className={`input${erreurs.telephone ? " inputErreur" : ""}`}
                   type="tel"
                   placeholder="05 59 12 34 56"
                   value={form.telephone}
@@ -269,11 +262,10 @@ export default function Formulaire() {
                   <p className="erreur">{erreurs.telephone}</p>
                 )}
               </div>
-
               <div className="champ">
                 <label className="label">Email</label>
                 <input
-                  className={`${"input"} ${erreurs.email ? "inputErreur" : ""}`}
+                  className={`input${erreurs.email ? " inputErreur" : ""}`}
                   type="email"
                   placeholder="contact@exemple.fr"
                   value={form.email}
@@ -284,7 +276,6 @@ export default function Formulaire() {
             </div>
           </fieldset>
 
-          {/* Horaires */}
           <fieldset className="fieldset">
             <legend className="legend">Horaires d'ouverture</legend>
             <p className="aide">
@@ -309,7 +300,6 @@ export default function Formulaire() {
             </div>
           </fieldset>
 
-          {/* GPS */}
           <fieldset className="fieldset">
             <legend className="legend">
               Localisation GPS <span className="optionnel">(optionnel)</span>
@@ -330,7 +320,7 @@ export default function Formulaire() {
               <div className="champ">
                 <label className="label">Latitude</label>
                 <input
-                  className={`${"input"} ${erreurs.lat ? "inputErreur" : ""}`}
+                  className={`input${erreurs.lat ? " inputErreur" : ""}`}
                   type="text"
                   placeholder="ex : 44.8400"
                   value={form.coordonnees.lat}
@@ -338,11 +328,10 @@ export default function Formulaire() {
                 />
                 {erreurs.lat && <p className="erreur">{erreurs.lat}</p>}
               </div>
-
               <div className="champ">
                 <label className="label">Longitude</label>
                 <input
-                  className={`${"input"} ${erreurs.lng ? "inputErreur" : ""}`}
+                  className={`input${erreurs.lng ? " inputErreur" : ""}`}
                   type="text"
                   placeholder="ex : -0.5700"
                   value={form.coordonnees.lng}
@@ -353,7 +342,6 @@ export default function Formulaire() {
             </div>
           </fieldset>
 
-          {/* Actions */}
           <div className="actions">
             <Link
               to={estModif ? `/entreprise/${modifierId}` : "/liste"}

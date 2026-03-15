@@ -21,13 +21,13 @@ export default function Liste() {
 
   const [searchParams] = useSearchParams();
 
-  // Pré-remplir le secteur depuis l'URL (?secteur=...)
   useEffect(() => {
     const s = searchParams.get("secteur");
     if (s) setSecteurActif(decodeURIComponent(s));
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // on veut volontairement ne déclencher qu'au montage
 
-  const [vue, setVue] = React.useState("grille"); // 'grille' | 'carte'
+  const [vue, setVue] = React.useState("grille");
 
   return (
     <>
@@ -48,16 +48,15 @@ export default function Liste() {
           total={resultats.length}
         />
 
-        {/* Toggle vue */}
         <div className="vueToggle">
           <button
-            className={`vueBtn ${vue === "grille" ? "vueBtnActif" : ""}`}
+            className={`vueBtn${vue === "grille" ? " vueBtnActif" : ""}`}
             onClick={() => setVue("grille")}
           >
             🗂 Grille
           </button>
           <button
-            className={`vueBtn ${vue === "carte" ? "vueBtnActif" : ""}`}
+            className={`vueBtn${vue === "carte" ? " vueBtnActif" : ""}`}
             onClick={() => setVue("carte")}
           >
             🗺 Carte
