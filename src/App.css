@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --c-bg:        #F5F2EC;
+  --c-bg2:       #EDEAE2;
+  --c-surface:   #FFFFFF;
+  --c-ink:       #1A1814;
+  --c-ink2:      #4A4740;
+  --c-ink3:      #8A8780;
+  --c-accent:    #C8501A;
+  --c-accent2:   #E8A87C;
+  --c-border:    #D8D4CC;
+  --c-tag-bg:    #EDE8DF;
+
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+
+  --shadow-sm: 0 1px 3px rgba(26,24,20,0.08);
+  --shadow-md: 0 4px 16px rgba(26,24,20,0.10);
+  --shadow-lg: 0 8px 32px rgba(26,24,20,0.14);
+
+  --transition: 0.22s ease;
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--c-bg);
+  color: var(--c-ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: var(--font-body); cursor: pointer; border: none; background: none; }
+input, textarea, select { font-family: var(--font-body); }
+img { display: block; max-width: 100%; }
+
+/* Leaflet override */
+.leaflet-container { border-radius: var(--radius-md); }

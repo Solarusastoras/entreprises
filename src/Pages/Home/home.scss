@@ -1,0 +1,253 @@
+// Page d'accueil
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+// Hero
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--c-border);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.heroContent { max-width: 560px; }
+
+.heroSurtitle {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--c-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.heroTitre {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  color: var(--c-ink);
+  margin-bottom: 16px;
+
+  em {
+    font-style: italic;
+    color: var(--c-accent);
+  }
+}
+
+.heroDesc {
+  font-size: 1.05rem;
+  color: var(--c-ink2);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 480px;
+}
+
+.heroCta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.heroStats {
+  font-size: 0.85rem;
+  color: var(--c-ink3);
+
+  strong { color: var(--c-ink); }
+}
+
+// Décoration flottante
+.heroDecor {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  span {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    animation: float 3s ease-in-out infinite;
+
+    &:nth-child(2) { animation-delay: 0.5s; }
+    &:nth-child(3) { animation-delay: 1s; }
+    &:nth-child(4) { animation-delay: 1.5s; }
+    &:nth-child(5) { animation-delay: 2s; }
+    &:nth-child(6) { animation-delay: 2.5s; }
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+// Boutons partagés
+.btnPrimaire {
+  display: inline-block;
+  background: var(--c-accent);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background var(--transition), transform var(--transition);
+
+  &:hover {
+    background: #a84012;
+    transform: translateY(-2px);
+  }
+}
+
+.btnSecondaire {
+  display: inline-block;
+  background: var(--c-surface);
+  color: var(--c-ink);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1.5px solid var(--c-border);
+  transition: border-color var(--transition), color var(--transition), transform var(--transition);
+
+  &:hover {
+    border-color: var(--c-accent);
+    color: var(--c-accent);
+    transform: translateY(-2px);
+  }
+}
+
+// Sections
+.section { padding: 3rem 0; }
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+
+  .sectionTitre { margin-bottom: 0; }
+}
+
+.sectionTitre {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--c-ink);
+  margin-bottom: 1.5rem;
+}
+
+.voirTout {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--c-accent);
+  transition: opacity var(--transition);
+
+  &:hover { opacity: 0.75; }
+}
+
+// Grille secteurs
+.secteurGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.secteurCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 1rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--c-ink2);
+  text-align: center;
+  transition: all var(--transition);
+
+  &:hover {
+    border-color: var(--c-accent);
+    color: var(--c-accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+.secteurIcone { font-size: 1.6rem; }
+
+// Grille cartes commerces
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+// Loader carte
+.mapLoader {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-bg2);
+  border-radius: var(--radius-lg);
+  color: var(--c-ink3);
+  font-size: 0.95rem;
+}
+
+// Bannière CTA
+.ctaBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: var(--c-ink);
+  color: #fff;
+  padding: 2.5rem 3rem;
+  border-radius: var(--radius-lg);
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+  }
+
+  .btnPrimaire {
+    background: var(--c-accent);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}

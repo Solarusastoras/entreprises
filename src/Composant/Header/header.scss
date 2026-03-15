@@ -1,0 +1,209 @@
+// Header sticky
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--c-surface);
+  border-bottom: 1px solid var(--c-border);
+  box-shadow: 0 1px 8px rgba(26, 24, 20, 0.06);
+}
+
+.headerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+// Logo
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--c-ink);
+  flex-shrink: 0;
+
+  &:hover .logoTexte { opacity: 0.85; }
+}
+
+.logoIcone {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.logoTexte {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--c-ink);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition: opacity var(--transition);
+
+  em {
+    font-style: italic;
+    color: var(--c-accent);
+  }
+}
+
+// Nav desktop
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: auto;
+
+  @media (max-width: 640px) {
+    display: none;
+  }
+}
+
+.navLink {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--c-ink2);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition), background var(--transition);
+
+  &:hover {
+    color: var(--c-ink);
+    background: var(--c-tag-bg);
+  }
+
+  &.actif {
+    color: var(--c-accent);
+    background: rgba(200, 80, 26, 0.07);
+    font-weight: 600;
+  }
+}
+
+.navBtnAjouter {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--c-accent);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 0.75rem;
+  white-space: nowrap;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+
+  &:hover {
+    background: #a84012;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(200, 80, 26, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}
+
+// Burger mobile
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  padding: 7px;
+  background: none;
+  border: 1px solid var(--c-border);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), border-color var(--transition);
+
+  &:hover {
+    background: var(--c-tag-bg);
+    border-color: var(--c-ink3);
+  }
+
+  @media (max-width: 640px) {
+    display: flex;
+  }
+
+  span {
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background: var(--c-ink);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    transform-origin: center;
+  }
+}
+
+.burgerOuvert {
+  background: var(--c-tag-bg);
+  border-color: var(--c-ink3);
+
+  span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+}
+
+// Nav mobile
+.navMobile {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1rem 1rem;
+  border-top: 1px solid var(--c-border);
+  background: var(--c-surface);
+  gap: 2px;
+  animation: slideDown 0.15s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.navMobileLink {
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--c-ink2);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
+
+  &:hover {
+    background: var(--c-tag-bg);
+    color: var(--c-ink);
+  }
+
+  &.actif {
+    color: var(--c-accent);
+    background: rgba(200, 80, 26, 0.07);
+    font-weight: 600;
+  }
+}
+
+.navMobileBtnAjouter {
+  margin-top: 8px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--c-accent);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  transition: background var(--transition);
+
+  &:hover { background: #a84012; }
+}
