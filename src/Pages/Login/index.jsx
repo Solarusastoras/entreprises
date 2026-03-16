@@ -1,26 +1,26 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../Utils/hooks/useAuth';
-import './login.scss';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../Utils/hooks/useAuth.js";
+import "./login.scss";
 
 export default function Login() {
   const { connexion } = useAuth();
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState('');
-  const [motDePasse, setMotDePasse] = useState('');
-  const [erreur, setErreur] = useState('');
+  const [email, setEmail] = useState("");
+  const [motDePasse, setMotDePasse] = useState("");
+  const [erreur, setErreur] = useState("");
   const [chargement, setChargement] = useState(false);
 
   async function handleSubmit(ev) {
     ev.preventDefault();
-    setErreur('');
+    setErreur("");
     setChargement(true);
     try {
       await connexion(email, motDePasse);
-      navigate('/');
+      navigate("/");
     } catch (e) {
-      setErreur('Email ou mot de passe incorrect.');
+      setErreur("Email ou mot de passe incorrect.");
     } finally {
       setChargement(false);
     }
@@ -29,7 +29,6 @@ export default function Login() {
   return (
     <div className="loginPage">
       <div className="loginCard">
-
         <div className="loginLogo">
           <span>🏪</span>
           <h1>CommercesLocaux</h1>
@@ -65,10 +64,9 @@ export default function Login() {
           </div>
 
           <button type="submit" className="loginBtn" disabled={chargement}>
-            {chargement ? 'Connexion…' : 'Se connecter'}
+            {chargement ? "Connexion…" : "Se connecter"}
           </button>
         </form>
-
       </div>
     </div>
   );
