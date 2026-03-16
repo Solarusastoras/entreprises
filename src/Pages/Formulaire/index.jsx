@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useSearchParams, Link } from "react-router-dom";
-import Navbar from "../../Composant/NavBar/index.jsx";
 import { useEntreprises } from "../../Utils/hooks/magasin.js";
 import {
   validerEmail,
@@ -10,23 +9,52 @@ import {
 import "./form.scss";
 
 const SECTEURS = [
-  "Boulangerie", "Pâtisserie", "Boucherie", "Épicerie", "Traiteur",
-  "Restaurant", "Restaurant japonais", "Café / Bar", "Coiffure",
-  "Pharmacie", "Optique", "Kinésithérapie", "Vétérinaire",
-  "Garage automobile", "Plomberie", "Électricité", "Menuiserie",
-  "Immobilier", "Auto-école", "Pressing", "Librairie", "Fleuriste",
-  "Bijouterie", "Magasin de sport", "École de musique", "Autre",
+  "Boulangerie",
+  "Pâtisserie",
+  "Boucherie",
+  "Épicerie",
+  "Traiteur",
+  "Restaurant",
+  "Restaurant japonais",
+  "Café / Bar",
+  "Coiffure",
+  "Pharmacie",
+  "Optique",
+  "Kinésithérapie",
+  "Vétérinaire",
+  "Garage automobile",
+  "Plomberie",
+  "Électricité",
+  "Menuiserie",
+  "Immobilier",
+  "Auto-école",
+  "Pressing",
+  "Librairie",
+  "Fleuriste",
+  "Bijouterie",
+  "Magasin de sport",
+  "École de musique",
+  "Autre",
 ];
 
 const HORAIRE_VIDE = {
-  lundi: "", mardi: "", mercredi: "", jeudi: "",
-  vendredi: "", samedi: "", dimanche: "",
+  lundi: "",
+  mardi: "",
+  mercredi: "",
+  jeudi: "",
+  vendredi: "",
+  samedi: "",
+  dimanche: "",
 };
 
 function champVide() {
   return {
-    nom: "", secteur: "", description: "",
-    adresse: "", telephone: "", email: "",
+    nom: "",
+    secteur: "",
+    description: "",
+    adresse: "",
+    telephone: "",
+    email: "",
     horaires: { ...HORAIRE_VIDE },
     coordonnees: { lat: "", lng: "" },
   };
@@ -37,13 +65,13 @@ export default function Formulaire() {
   const [searchParams] = useSearchParams();
   const modifierId = searchParams.get("modifier");
 
-  const { ajouterEntreprise, modifierEntreprise, getEntreprise } = useEntreprises();
+  const { ajouterEntreprise, modifierEntreprise, getEntreprise } =
+    useEntreprises();
 
   const [form, setForm] = useState(champVide());
   const [erreurs, setErreurs] = useState({});
   const [succes, setSucces] = useState(false);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (modifierId) {
       const e = getEntreprise(modifierId);
@@ -63,7 +91,7 @@ export default function Formulaire() {
         });
       }
     }
-  }, [modifierId]); // on veut volontairement ne déclencher qu'au montage
+  }, [modifierId, getEntreprise]);
 
   function set(champ, valeur) {
     setForm((prev) => ({ ...prev, [champ]: valeur }));
@@ -161,7 +189,9 @@ export default function Formulaire() {
             <legend className="legend">Informations principales</legend>
             <div className="row2">
               <div className="champ">
-                <label className="label">Nom du commerce <span className="requis">*</span></label>
+                <label className="label">
+                  Nom du commerce <span className="requis">*</span>
+                </label>
                 <input
                   className={`input${erreurs.nom ? " inputErreur" : ""}`}
                   type="text"
@@ -172,7 +202,9 @@ export default function Formulaire() {
                 {erreurs.nom && <p className="erreur">{erreurs.nom}</p>}
               </div>
               <div className="champ">
-                <label className="label">Secteur d'activité <span className="requis">*</span></label>
+                <label className="label">
+                  Secteur d'activité <span className="requis">*</span>
+                </label>
                 <select
                   className={`input${erreurs.secteur ? " inputErreur" : ""}`}
                   value={form.secteur}
@@ -180,7 +212,9 @@ export default function Formulaire() {
                 >
                   <option value="">— Choisir un secteur —</option>
                   {SECTEURS.map((s) => (
-                    <option key={s} value={s}>{s}</option>
+                    <option key={s} value={s}>
+                      {s}
+                    </option>
                   ))}
                 </select>
                 {erreurs.secteur && <p className="erreur">{erreurs.secteur}</p>}
@@ -201,7 +235,9 @@ export default function Formulaire() {
           <fieldset className="fieldset">
             <legend className="legend">Coordonnées</legend>
             <div className="champ">
-              <label className="label">Adresse <span className="requis">*</span></label>
+              <label className="label">
+                Adresse <span className="requis">*</span>
+              </label>
               <input
                 className={`input${erreurs.adresse ? " inputErreur" : ""}`}
                 type="text"
@@ -221,7 +257,9 @@ export default function Formulaire() {
                   value={form.telephone}
                   onChange={(e) => set("telephone", e.target.value)}
                 />
-                {erreurs.telephone && <p className="erreur">{erreurs.telephone}</p>}
+                {erreurs.telephone && (
+                  <p className="erreur">{erreurs.telephone}</p>
+                )}
               </div>
               <div className="champ">
                 <label className="label">Email</label>
@@ -240,7 +278,8 @@ export default function Formulaire() {
           <fieldset className="fieldset">
             <legend className="legend">Horaires d'ouverture</legend>
             <p className="aide">
-              Exemples : <code>07h00 - 19h30</code>, <code>08h00 - 12h00 / 14h00 - 18h00</code>, <code>Fermé</code>
+              Exemples : <code>07h00 - 19h30</code>,{" "}
+              <code>08h00 - 12h00 / 14h00 - 18h00</code>, <code>Fermé</code>
             </p>
             <div className="horairesGrid">
               {JOURS_SEMAINE.map((jour) => (
@@ -266,7 +305,12 @@ export default function Formulaire() {
             </legend>
             <p className="aide">
               Trouvez les coordonnées sur{" "}
-              <a href="https://www.openstreetmap.org/" target="_blank" rel="noreferrer" className="lienAide">
+              <a
+                href="https://www.openstreetmap.org/"
+                target="_blank"
+                rel="noreferrer"
+                className="lienAide"
+              >
                 OpenStreetMap
               </a>{" "}
               en faisant un clic droit sur la carte.
@@ -298,11 +342,16 @@ export default function Formulaire() {
           </fieldset>
 
           <div className="actions">
-            <Link to={estModif ? `/entreprise/${modifierId}` : "/liste"} className="btnAnnuler">
+            <Link
+              to={estModif ? `/entreprise/${modifierId}` : "/liste"}
+              className="btnAnnuler"
+            >
               Annuler
             </Link>
             <button type="submit" className="btnSubmit">
-              {estModif ? "💾 Enregistrer les modifications" : "✅ Ajouter le commerce"}
+              {estModif
+                ? "💾 Enregistrer les modifications"
+                : "✅ Ajouter le commerce"}
             </button>
           </div>
         </form>
