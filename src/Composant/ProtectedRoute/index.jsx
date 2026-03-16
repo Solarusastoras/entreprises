@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { useAuth } from "../../Utils/hooks/useAuth";
+import { useAuth } from "../../Utils/hooks/useAuth.js";
 
 export default function ProtectedRoute({ children }) {
   const { estConnecte, chargement } = useAuth();
