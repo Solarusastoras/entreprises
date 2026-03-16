@@ -1,5 +1,3 @@
-// Card commerce
-
 .card {
   display: flex;
   flex-direction: column;
@@ -11,127 +9,181 @@
   color: var(--c-ink);
   text-decoration: none;
   transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
-  cursor: pointer;
-
-  &:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-3px);
-    border-color: var(--c-accent2);
-  }
 }
 
-// Header : icône + secteur + statut
-.header {
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  border-color: var(--c-accent2);
+}
+
+.cardTop {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.icone {
+.cardIcone {
   font-size: 1.6rem;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--c-tag-bg);
   border-radius: var(--radius-sm);
-  flex-shrink: 0;
   border: 1px solid var(--c-border);
+  flex-shrink: 0;
 }
 
-.meta {
+.cardTitreBloc {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
+  min-width: 0;
 }
 
-.secteur {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--c-accent);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.ouvert {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #2e7d32;
-  background: #e8f5e9;
-  padding: 2px 8px;
-  border-radius: 20px;
-  width: fit-content;
-}
-
-.ferme {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #b71c1c;
-  background: #ffebee;
-  padding: 2px 8px;
-  border-radius: 20px;
-  width: fit-content;
-}
-
-// Séparateur visuel sous le header
-.header + .nom {
-  padding-top: 4px;
-  border-top: 1px solid var(--c-bg2);
-  margin-top: 2px;
-}
-
-// Nom du commerce
-.nom {
+.cardNom {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: var(--c-ink);
-  line-height: 1.3;
-  margin: 0;
-}
-
-// Description courte (2 lignes max)
-.description {
-  font-size: 0.875rem;
-  color: var(--c-ink2);
-  line-height: 1.55;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  flex-grow: 1;
-}
-
-// Footer : adresse + téléphone
-.footer {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-top: auto;
-  padding-top: 10px;
-  border-top: 1px solid var(--c-bg2);
-}
-
-.adresse,
-.tel {
-  font-size: 0.8rem;
-  color: var(--c-ink3);
+  line-height: 1.2;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-// Lien "Voir la fiche"
+.cardSecteur {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--c-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.progBloc {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.progTitre {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--c-ink3);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.progSteps {
+  display: flex;
+  gap: 3px;
+}
+
+.progStep {
+  flex: 1;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--c-bg2);
+}
+
+.progStep.prospect     { background: #B5D4F4; }
+.progStep.contact      { background: #EF9F27; }
+.progStep.devis        { background: #7F77DD; }
+.progStep.signe        { background: #639922; }
+.progStep.maquette     { background: #F0997B; }
+.progStep.developpement { background: #7F77DD; }
+.progStep.validation   { background: #EF9F27; }
+.progStep.enligne      { background: #5DCAA5; }
+.progStep.livre        { background: #639922; }
+.progStep.inactif      { background: var(--c-bg2); }
+
+.progLabels {
+  display: flex;
+}
+
+.progLabel {
+  flex: 1;
+  font-size: 0.65rem;
+  color: var(--c-ink3);
+  text-align: center;
+}
+
+.progLabel.actif {
+  font-weight: 600;
+  color: var(--c-ink);
+}
+
+.cardInfos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 8px;
+  border-top: 1px solid var(--c-bg2);
+}
+
+.infoRow {
+  display: flex;
+  gap: 8px;
+  font-size: 0.78rem;
+}
+
+.infoLabel {
+  color: var(--c-ink3);
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+.infoVal {
+  color: var(--c-ink2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.relance {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.relance.urgente { background: #FCEBEB; color: #A32D2D; }
+.relance.bientot { background: #FAEEDA; color: #633806; }
+.relance.ok      { background: #EAF3DE; color: #27500A; }
+
+.relanceDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.relance.urgente .relanceDot { background: #E24B4A; }
+.relance.bientot .relanceDot { background: #BA7517; }
+.relance.ok      .relanceDot { background: #639922; }
+
+.cardNote {
+  font-size: 0.78rem;
+  color: var(--c-ink2);
+  background: var(--c-bg);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-style: italic;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .voirPlus {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--c-accent);
-  margin-top: 4px;
-  transition: letter-spacing var(--transition);
-
-  .card:hover & {
-    letter-spacing: 0.02em;
-  }
+  margin-top: 2px;
 }

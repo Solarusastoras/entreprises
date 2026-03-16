@@ -3,15 +3,6 @@ export function formaterTelephone(tel) {
   return tel.replace(/\s/g, '').replace(/(\d{2})(?=\d)/g, '$1 ').trim();
 }
 
-export function slugifier(texte) {
-  return texte
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
-}
-
 export const JOURS_SEMAINE = [
   'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'
 ];
@@ -38,33 +29,55 @@ export function validerTelephone(tel) {
 }
 
 export const ICONES_SECTEUR = {
-  'Boulangerie':        '🥖',
-  'Pâtisserie':         '🍰',
-  'Boucherie':          '🥩',
-  'Épicerie':           '🛒',
-  'Traiteur':           '🍽️',
-  'Restaurant':         '🍴',
-  'Restaurant japonais':'🍣',
-  'Café / Bar':         '☕',
-  'Coiffure':           '✂️',
-  'Pharmacie':          '💊',
-  'Optique':            '👓',
-  'Kinésithérapie':     '🏥',
-  'Vétérinaire':        '🐾',
-  'Garage automobile':  '🔧',
-  'Plomberie':          '🚿',
-  'Électricité':        '⚡',
-  'Menuiserie':         '🪚',
-  'Immobilier':         '🏠',
-  'Auto-école':         '🚗',
-  'Pressing':           '👔',
-  'Librairie':          '📚',
-  'Fleuriste':          '🌸',
-  'Bijouterie':         '💍',
-  'Magasin de sport':   '🏄',
-  'École de musique':   '🎵',
+  'Boulangerie': '🥖', 'Pâtisserie': '🍰', 'Boucherie': '🥩',
+  'Épicerie': '🛒', 'Traiteur': '🍽️', 'Restaurant': '🍴',
+  'Restaurant japonais': '🍣', 'Café / Bar': '☕', 'Coiffure': '✂️',
+  'Pharmacie': '💊', 'Optique': '👓', 'Kinésithérapie': '🏥',
+  'Vétérinaire': '🐾', 'Garage automobile': '🔧', 'Plomberie': '🚿',
+  'Électricité': '⚡', 'Menuiserie': '🪚', 'Immobilier': '🏠',
+  'Auto-école': '🚗', 'Pressing': '👔', 'Librairie': '📚',
+  'Fleuriste': '🌸', 'Bijouterie': '💍', 'Magasin de sport': '🏄',
+  'École de musique': '🎵',
 };
 
 export function iconeParSecteur(secteur) {
   return ICONES_SECTEUR[secteur] || '🏪';
+}
+
+// --- Prospection ---
+export const STATUTS_PROSPECTION = [
+  { value: 'prospect',  label: 'Prospect' },
+  { value: 'contact',   label: 'Contact'  },
+  { value: 'devis',     label: 'Devis'    },
+  { value: 'signe',     label: 'Signé'    },
+];
+
+export const STATUTS_SITE = [
+  { value: 'maquette',      label: 'Maquette'     },
+  { value: 'developpement', label: 'Dév.'          },
+  { value: 'validation',    label: 'Validation'    },
+  { value: 'enligne',       label: 'En ligne'      },
+  { value: 'livre',         label: 'Livré'         },
+];
+
+export function indexStatutProspection(statut) {
+  return STATUTS_PROSPECTION.findIndex((s) => s.value === statut);
+}
+
+export function indexStatutSite(statut) {
+  return STATUTS_SITE.findIndex((s) => s.value === statut);
+}
+
+// Calcul relance
+export function statutRelance(date_relance) {
+  if (!date_relance) return null;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const relance = new Date(date_relance);
+  relance.setHours(0, 0, 0, 0);
+  const diff = Math.ceil((relance - today) / (1000 * 60 * 60 * 24));
+  if (diff < 0)  return { type: 'urgente', label: `Relance dépassée de ${Math.abs(diff)}j !` };
+  if (diff === 0) return { type: 'urgente', label: "Relance aujourd'hui !" };
+  if (diff <= 3)  return { type: 'bientot', label: `Relance dans ${diff} jour${diff > 1 ? 's' : ''}` };
+  return { type: 'ok', label: `Relance le ${relance.toLocaleDateString('fr-FR')}` };
 }
