@@ -7,6 +7,9 @@ export default function SearchBar({
   secteurs,
   secteurActif,
   setSecteurActif,
+  villes,
+  villeActif,
+  setVilleActif,
   total,
 }) {
   return (
@@ -44,6 +47,25 @@ export default function SearchBar({
           ))}
         </div>
       </div>
+
+      {/* Filtres ville */}
+      {villes && villes.length > 1 && (
+        <div className="filtres">
+          <span className="filtresLabel">Ville :</span>
+          <select
+            className="filterSelect"
+            value={villeActif}
+            onChange={(e) => setVilleActif(e.target.value)}
+          >
+            <option value="">Toutes</option>
+            {villes.filter(Boolean).map((v) => (
+              <option key={v} value={v}>
+                {v}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
 
       {/* Compteur */}
       <p className="compte">

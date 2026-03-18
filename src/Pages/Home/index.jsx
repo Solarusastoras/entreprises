@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { Link } from "react-router-dom";
 import { useEntreprises } from "../../Utils/hooks/magasin";
-import { useSearch } from "../../Utils/hooks/search";
+import { useSearch, extraireVille } from "../../Utils/hooks/search";
 import EntrepriseCard from "../../Composant/Card/index.jsx";
 import "./home.scss";
 
@@ -12,7 +12,8 @@ export default function Home() {
   const { resultats } = useSearch(entreprises);
   const recents = resultats.slice(0, 6);
 
-  const secteurs = [...new Set(entreprises.map((e) => e.secteur))].slice(0, 8);
+  const secteurs = [...new Set(entreprises.map((e) => e.secteur).filter(Boolean))].slice(0, 8);
+  const villes = [...new Set(entreprises.map((e) => extraireVille(e.adresse)).filter(Boolean))].slice(0, 8);
 
   return (
     <>
@@ -84,6 +85,25 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        {/* Villes rapides */}
+        {villes.length > 0 && (
+          <section className="section">
+            <h2 className="sectionTitre">Parcourir par ville</h2>
+            <div className="secteurGrid">
+              {villes.map((v) => (
+                <Link
+                  key={v}
+                  to={`/liste?ville=${encodeURIComponent(v)}`}
+                  className="secteurCard"
+                >
+                  <span className="secteurIcone">📍</span>
+                  <span>{v}</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Derniers ajouts */}
         <section className="section">

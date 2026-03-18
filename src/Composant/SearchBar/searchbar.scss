@@ -126,3 +126,24 @@
 
   strong { color: var(--c-ink); font-weight: 600; }
 }
+
+.filterSelect {
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--c-border);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--c-ink);
+  background: var(--c-bg);
+  cursor: pointer;
+  transition: all var(--transition);
+
+  &:hover {
+    border-color: var(--c-accent);
+  }
+  &:focus {
+    outline: none;
+    border-color: var(--c-accent);
+    box-shadow: 0 0 0 2px rgba(200, 80, 26, 0.1);
+  }
+}

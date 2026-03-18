@@ -15,7 +15,10 @@ export default function Liste() {
     setQuery,
     secteurActif,
     setSecteurActif,
+    villeActif,
+    setVilleActif,
     secteurs,
+    villes,
     resultats,
   } = useSearch(entreprises);
 
@@ -24,6 +27,9 @@ export default function Liste() {
   useEffect(() => {
     const s = searchParams.get("secteur");
     if (s) setSecteurActif(decodeURIComponent(s));
+    
+    const v = searchParams.get("ville");
+    if (v) setVilleActif(decodeURIComponent(v));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // on veut volontairement ne déclencher qu'au montage
 
@@ -45,6 +51,9 @@ export default function Liste() {
           secteurs={secteurs}
           secteurActif={secteurActif}
           setSecteurActif={setSecteurActif}
+          villes={villes}
+          villeActif={villeActif}
+          setVilleActif={setVilleActif}
           total={resultats.length}
         />
 
