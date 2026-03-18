@@ -235,20 +235,31 @@ export default function Formulaire() {
     const data = {
       ...form,
       statut_site: form.statut_site || null,
+      date_contact: form.date_contact || null,
+      date_relance: form.date_relance || null,
       coordonnees: {
         lat: form.coordonnees.lat ? Number(form.coordonnees.lat) : null,
         lng: form.coordonnees.lng ? Number(form.coordonnees.lng) : null,
       },
     };
 
-    if (modifierId) {
-      await modifierEntreprise(modifierId, data);
-      setSucces(true);
-      setTimeout(() => navigate(`/entreprise/${modifierId}`), 1200);
-    } else {
-      const newId = await ajouterEntreprise(data);
-      setSucces(true);
-      setTimeout(() => navigate(`/entreprise/${newId}`), 1200);
+    try {
+      if (modifierId) {
+        await modifierEntreprise(modifierId, data);
+        setSucces(true);
+        setTimeout(() => navigate(`/entreprise/${modifierId}`), 1200);
+      } else {
+        const newId = await ajouterEntreprise(data);
+        if (newId) {
+          setSucces(true);
+          setTimeout(() => navigate(`/entreprise/${newId}`), 1200);
+        } else {
+          alert("Erreur lors de l'ajout. Vérifiez la console.");
+        }
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Une erreur est survenue.");
     }
   }
 
