@@ -47,8 +47,11 @@ export default function Transports({ coordonnees }) {
             }
           });
           
-          if (!resAround.ok) throw new Error("Erreur de l'API AroundMe");
-          const dataAround = await resAround.json();
+          if (!resAround.ok) {
+            const txt = await resAround.text();
+            throw new Error(`AroundMe HTTP ${resAround.status} : ${txt.substring(0, 50)}`);
+          }
+          const dataAround = JSON.parse(await resAround.text());
           
           if (dataAround && dataAround.length > 0) {
             // On prend l'arrêt le plus proche (le premier ou on trie par distance)
@@ -88,8 +91,11 @@ export default function Transports({ coordonnees }) {
           }
         });
 
-        if (!resStop.ok) throw new Error("Erreur de l'API GetStopMonitoring");
-        const dataStop = await resStop.json();
+        if (!resStop.ok) {
+          const txt = await resStop.text();
+          throw new Error(`GetStopMonitoring HTTP ${resStop.status} : ${txt.substring(0, 50)}`);
+        }
+        const dataStop = JSON.parse(await resStop.text());
         
         // Extraction de l'objet dynamique renvoyé par l'API (clé dynamique type "SIRI_IDELIS_...")
         const passagesTrouves = [];
@@ -110,8 +116,8 @@ export default function Transports({ coordonnees }) {
         setPassages(passagesTrouves);
 
       } catch (err) {
-        console.error("Erreur IDELIS:", err);
-        setErreur("Service IDELIS temporairement indisponible.");
+        console.error("Erreur IDELIS détaillée :", err);
+        setErreur(`Détail technique : ${err.message}`);
       } finally {
         setLoading(false);
       }
