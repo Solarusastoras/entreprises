@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { Link } from "react-router-dom";
 import { useEntreprises } from "../../Utils/hooks/magasin";
 import { useSearch, extraireVille } from "../../Utils/hooks/search";
+import { iconeParSecteur } from "../../Utils/hooks/helpers";
 import EntrepriseCard from "../../Composant/Card/index.jsx";
 import "./home.scss";
 
@@ -64,21 +65,7 @@ export default function Home() {
                 className="secteurCard"
               >
                 <span className="secteurIcone">
-                  {s === "Boulangerie"
-                    ? "🥖"
-                    : s === "Coiffure"
-                      ? "✂️"
-                      : s === "Restaurant"
-                        ? "🍴"
-                        : s === "Pharmacie"
-                          ? "💊"
-                          : s === "Garage automobile"
-                            ? "🔧"
-                            : s === "Librairie"
-                              ? "📚"
-                              : s === "Fleuriste"
-                                ? "🌸"
-                                : "🏪"}
+                  {iconeParSecteur(s)}
                 </span>
                 <span>{s}</span>
               </Link>

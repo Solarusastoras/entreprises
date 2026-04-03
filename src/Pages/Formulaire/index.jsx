@@ -8,6 +8,7 @@ import {
   JOURS_SEMAINE,
   STATUTS_PROSPECTION,
   STATUTS_SITE,
+  iconeParSecteur,
 } from "../../Utils/hooks/helpers.js";
 import "./form.scss";
 
@@ -332,7 +333,7 @@ export default function Formulaire() {
                 <option value="">— Choisir —</option>
                 {SECTEURS.map((s) => (
                   <option key={s} value={s}>
-                    {s}
+                    {iconeParSecteur(s)} {s}
                   </option>
                 ))}
               </select>
