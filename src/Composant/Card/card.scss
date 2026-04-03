@@ -177,6 +177,7 @@
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -186,4 +187,22 @@
   font-weight: 600;
   color: var(--c-accent);
   margin-top: 2px;
+}
+
+.card.status-ouvert {
+  border-color: #5DCAA5;
+  box-shadow: 0 0 15px rgba(93, 202, 165, 0.4);
+}
+.card.status-ouvert:hover {
+  border-color: #5DCAA5;
+  box-shadow: 0 0 25px rgba(93, 202, 165, 0.6);
+}
+
+.card.status-ferme {
+  border-color: #E24B4A;
+  box-shadow: 0 0 15px rgba(226, 75, 74, 0.4);
+}
+.card.status-ferme:hover {
+  border-color: #E24B4A;
+  box-shadow: 0 0 25px rgba(226, 75, 74, 0.6);
 }

@@ -7,6 +7,7 @@ import {
   indexStatutProspection,
   indexStatutSite,
   statutRelance,
+  estOuvert,
 } from "../../Utils/hooks/helpers";
 import "./card.scss";
 
@@ -14,17 +15,21 @@ export default function Card({ entreprise }) {
   const {
     id, nom, secteur, adresse,
     statut_prospection, statut_site,
-    contact_nom, contrat_type, date_contact, date_relance, note,
+    contact_nom, contrat_type, date_contact, date_relance, note, horaires
   } = entreprise;
 
   const icone = iconeParSecteur(secteur);
+  const isOpen = estOuvert(horaires);
+  let statusClass = "";
+  if (isOpen === true) statusClass = " status-ouvert";
+  else if (isOpen === false) statusClass = " status-ferme";
   const idxProsp = indexStatutProspection(statut_prospection || 'prospect');
   const idxSite  = indexStatutSite(statut_site);
   const relance  = statutRelance(date_relance);
   const estSigne = statut_prospection === 'signe';
 
   return (
-    <Link to={`/entreprise/${id}`} className="card">
+    <Link to={`/entreprise/${id}`} className={`card${statusClass}`}>
 
       {/* En-tête */}
       <div className="cardTop">
