@@ -35,18 +35,16 @@ export default function Transports({ coordonnees }) {
         let arretProche = cacheArrets.get(cacheKeyArrets);
 
         if (!arretProche) {
-          // La doc IDELIS parlait d'un GET avec un Body (interdit par les navigateurs standards)
-          // On va tenter un POST d'abord, ou s'adapter :
-          const resAround = await fetch(`${API_URL}/AroundMe`, {
-            method: "POST", // Nous essayons POST pour surmonter l'interdiction de Body sur GET
+          // On tente un GET, en passant les paramètres directement dans l'URL (car un GET avec Body est bloqué)
+          const params = new URLSearchParams({
+             latitude: coordonnees.lat,
+             longitude: coordonnees.lng
+          });
+          const resAround = await fetch(`${API_URL}/AroundMe?${params.toString()}`, {
+            method: "GET",
             headers: {
               "X-AUTH-TOKEN": API_TOKEN,
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              latitude: parseFloat(coordonnees.lat),
-              longitude: parseFloat(coordonnees.lng),
-            }),
+            }
           });
           
           if (!resAround.ok) throw new Error("Erreur de l'API AroundMe");
@@ -79,16 +77,15 @@ export default function Transports({ coordonnees }) {
         }
         dernierAppelRef.current = maintenant;
 
-        const resStop = await fetch(`${API_URL}/GetStopMonitoring`, {
-          method: "POST",
+        const paramsStop = new URLSearchParams({
+           code: arretProche.hastus,
+           next: "3"
+        });
+        const resStop = await fetch(`${API_URL}/GetStopMonitoring?${paramsStop.toString()}`, {
+          method: "GET",
           headers: {
             "X-AUTH-TOKEN": API_TOKEN,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            code: arretProche.hastus,
-            next: 3 // Demander les 3 prochains passages
-          }),
+          }
         });
 
         if (!resStop.ok) throw new Error("Erreur de l'API GetStopMonitoring");
