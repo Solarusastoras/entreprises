@@ -6,6 +6,7 @@ import {
   iconeParSecteur, estOuvert, JOURS_SEMAINE, jourActuel,
   STATUTS_PROSPECTION, STATUTS_SITE, indexStatutProspection, indexStatutSite, statutRelance,
 } from '../../Utils/hooks/helpers.js';
+import Transports from '../../Composant/Transports/index.jsx';
 import './entreprise.scss';
 
 const MapView = lazy(() => import('../../Composant/MapView/index.jsx'));
@@ -167,6 +168,9 @@ export default function Entreprise() {
               </Suspense>
             </div>
           )}
+
+          {/* Transports en commun IDELIS */}
+          {e.coordonnees?.lat && e.coordonnees?.lng && <Transports coordonnees={e.coordonnees} />}
         </div>
 
         {/* Sidebar */}
