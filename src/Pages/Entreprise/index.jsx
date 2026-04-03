@@ -165,6 +165,15 @@ export default function Entreprise() {
               <Suspense fallback={<div className="mapLoader">Chargement…</div>}>
                 <MapView entreprises={[e]} hauteur="260px" />
               </Suspense>
+              <a 
+                href={`https://www.google.com/maps/dir/?api=1&destination=${e.coordonnees.lat},${e.coordonnees.lng}`}
+                target="_blank" 
+                rel="noreferrer"
+                className="btnItineraire outline"
+                style={{marginTop: '1rem'}}
+              >
+                🗺️ y aller
+              </a>
             </div>
           )}
         </div>
@@ -176,7 +185,18 @@ export default function Entreprise() {
             {e.adresse && (
               <div className="coordItem">
                 <span className="coordIcone">📍</span>
-                <div><p className="coordLabel">Adresse</p><p>{e.adresse}</p></div>
+                <div>
+                  <p className="coordLabel">Adresse</p>
+                  <p>{e.adresse}</p>
+                  <a 
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${e.coordonnees?.lat && e.coordonnees?.lng ? `${e.coordonnees.lat},${e.coordonnees.lng}` : encodeURIComponent(e.adresse)}`}
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="btnItineraire"
+                  >
+                    🗺️ Itinéraire
+                  </a>
+                </div>
               </div>
             )}
             {e.telephone && (

@@ -242,6 +242,36 @@
   &:hover { opacity: 0.75; }
 }
 
+.btnItineraire {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--c-accent);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: opacity var(--transition);
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.btnItineraire.outline {
+  margin-top: 1rem;
+  background-color: transparent;
+  color: var(--c-accent);
+  border: 1px solid var(--c-accent);
+  padding: 8px 16px;
+  
+  &:hover {
+    background-color: var(--c-accent);
+    color: #fff;
+  }
+}
+
 .sideActions {
   display: flex;
   flex-direction: column;
