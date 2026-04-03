@@ -176,18 +176,7 @@ export default function Entreprise() {
             {e.adresse && (
               <div className="coordItem">
                 <span className="coordIcone">📍</span>
-                <div>
-                  <p className="coordLabel">Adresse</p>
-                  <p>{e.adresse}</p>
-                  <a 
-                    href={`https://www.google.com/maps/dir/?api=1&destination=${e.coordonnees?.lat && e.coordonnees?.lng ? `${e.coordonnees.lat},${e.coordonnees.lng}` : encodeURIComponent(e.adresse)}`}
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="btnItineraire"
-                  >
-                    🗺️ Itinéraire
-                  </a>
-                </div>
+                <div><p className="coordLabel">Adresse</p><p>{e.adresse}</p></div>
               </div>
             )}
             {e.telephone && (
