@@ -109,7 +109,7 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
   };
 
   return (
-    <div className="mapWrapper" style={{ height: hauteur }}>
+    <div className="mapWrapper">
       {isSingleMode && (
         <div className="routingPanel">
           <p className="routingTitre">🗺️ Itinéraire vers ce commerce</p>
@@ -142,7 +142,7 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
       <MapContainer
         center={isSingleMode ? [cible.coordonnees.lat, cible.coordonnees.lng] : CENTRE_DEFAUT}
         zoom={isSingleMode ? 14 : ZOOM_DEFAUT}
-        style={{ height: "100%", width: "100%", zIndex: 1 }}
+        style={{ height: hauteur, width: "100%", zIndex: 1, borderRadius: "var(--radius-md)" }}
         scrollWheelZoom={false}
       >
         <TileLayer
