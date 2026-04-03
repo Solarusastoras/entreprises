@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/idelis/:path*",
+      "destination": "https://api.idelis.fr/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
