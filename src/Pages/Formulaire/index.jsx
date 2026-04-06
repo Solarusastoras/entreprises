@@ -103,6 +103,7 @@ const SECTEURS = [
   "Tonnelier",
   "Traiteur",
   "Vendeur de vetements",
+  
   "Verrier",
   "Vétérinaire",
   "Vitrailliste",
