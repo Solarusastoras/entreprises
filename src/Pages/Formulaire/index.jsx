@@ -102,7 +102,7 @@ const SECTEURS = [
   "Taxi / VTC",
   "Tonnelier",
   "Traiteur",
-  "vendeur de ventements",
+  "Vendeur de ventements",
   "Verrier",
   "Vétérinaire",
   "Vitrailliste",
