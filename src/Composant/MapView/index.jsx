@@ -4,8 +4,14 @@ import { Link } from "react-router-dom";
 import { iconeParSecteur } from "../../Utils/hooks/helpers.js";
 import "./mapview.scss";
 
-const CENTRE_DEFAUT = { lat: 44.5, lng: -0.5 };
-const ZOOM_DEFAUT = 7;
+const CENTRE_DEFAUT = { lat: 43.15, lng: -0.6 };
+const ZOOM_DEFAUT = 9;
+const BEARN_BOUNDS = {
+  north: 43.7,
+  south: 42.4,
+  west: -0.9,
+  east: 0.3,
+};
 const LIBRARIES = ["places"];
 
 const parsePoint = (point) => {
@@ -185,6 +191,10 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
           fullscreenControl: false,
           zoomControl: true,
           clickableIcons: false,
+          restriction: {
+            latLngBounds: BEARN_BOUNDS,
+            strictBounds: false,
+          },
         }}
       >
         {avecCoords.map((e) => {
