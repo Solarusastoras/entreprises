@@ -10,21 +10,13 @@ const LIBRARIES = ["places"];
 
 export default function MapView({ entreprises, hauteur = "420px" }) {
   const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-  console.log("Clé Google Maps API:", apiKey ? "Présente" : "Manquante", apiKey ? "(longueur: " + apiKey.length + ")" : "");
-
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: apiKey || "",
     libraries: LIBRARIES,
   });
 
   const avecCoords = useMemo(
-    () => entreprises.filter((e) => {
-      const hasCoords = e.coordonnees?.lat && e.coordonnees?.lng;
-      if (!hasCoords) {
-        console.warn("Entreprise sans coordonnées:", e.nom, e.coordonnees);
-      }
-      return hasCoords;
-    }),
+    () => entreprises.filter((e) => e.coordonnees?.lat && e.coordonnees?.lng),
     [entreprises]
   );
 
@@ -36,7 +28,6 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
   const [loading, setLoading] = useState(false);
   const [erreur, setErreur] = useState("");
   const [userPos, setUserPos] = useState(null);
-  const [transportMode, setTransportMode] = useState("TRANSIT");
   const [activeMarker, setActiveMarker] = useState(null);
   const mapRef = useRef(null);
 
@@ -59,74 +50,27 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
   }, []);
 
   const fetchItineraire = async (startLat, startLng) => {
-    if (!cible) {
-      console.error("Aucune cible définie pour l'itinéraire");
-      return;
-    }
-    if (!window.google?.maps) {
-      setErreur("Impossible d'accéder à l'API Google Maps.");
-      return;
-    }
-
-    // Validation des coordonnées
-    if (!startLat || !startLng || !cible.coordonnees?.lat || !cible.coordonnees?.lng) {
-      console.error("Coordonnées invalides:", { startLat, startLng, cible: cible.coordonnees });
-      setErreur("Coordonnées invalides pour le calcul d'itinéraire.");
-      return;
-    }
-
-    console.log("Calcul d'itinéraire:", {
-      start: { lat: startLat, lng: startLng },
-      destination: { lat: cible.coordonnees.lat, lng: cible.coordonnees.lng },
-      mode: transportMode
-    });
-
+    if (!cible) return;
     setLoading(true);
     setErreur("");
-    const directionsService = new window.google.maps.DirectionsService();
+    try {
+      const url = `https://router.project-osrm.org/route/v1/driving/${startLng},${startLat};${cible.coordonnees.lng},${cible.coordonnees.lat}?overview=full&geometries=geojson`;
+      const res = await fetch(url);
+      const data = await res.json();
 
-    const request = {
-      origin: { lat: startLat, lng: startLng },
-      destination: { lat: cible.coordonnees.lat, lng: cible.coordonnees.lng },
-      travelMode: window.google.maps.TravelMode[transportMode],
-      provideRouteAlternatives: false,
-    };
+      if (data.code !== "Ok") throw new Error("Impossible de calculer l'itinéraire");
 
-    if (transportMode === "TRANSIT") {
-      request.transitOptions = {
-        modes: [window.google.maps.TransitMode.BUS],
-      };
-    }
-
-    console.log("Requête DirectionsService:", request);
-
-    directionsService.route(request, (result, status) => {
-      console.log("Réponse DirectionsService:", { status, result });
-
-      if (status !== window.google.maps.DirectionsStatus.OK || !result.routes?.[0]) {
-        console.error("DirectionsService status", status, result);
-        let errorMessage = "Erreur du calcul d'itinéraire.";
-        if (status === window.google.maps.DirectionsStatus.ZERO_RESULTS) {
-          errorMessage = transportMode === "TRANSIT"
-            ? "Aucun itinéraire en bus trouvé. Essayez la voiture."
-            : "Aucun itinéraire trouvé pour ces coordonnées.";
-        } else if (status === window.google.maps.DirectionsStatus.OVER_QUERY_LIMIT) {
-          errorMessage = "Limite de requêtes Google Maps atteinte.";
-        } else if (status === window.google.maps.DirectionsStatus.REQUEST_DENIED) {
-          errorMessage = "Requête Google Maps refusée. Vérifiez la clé API.";
-        }
-        setErreur(errorMessage);
-        setLoading(false);
-        return;
-      }
-
-      const coords = result.routes[0].overview_path.map((p) => ({ lat: p.lat(), lng: p.lng() }));
-      console.log("Itinéraire calculé avec", coords.length, "points");
+      // OSRM renvoie des coordonnées au format [lng, lat], Leaflet attend [lat, lng]
+      const coords = data.routes[0].geometry.coordinates.map(c => [c[1], c[0]]);
       setRouteCoords(coords);
-      setUserPos({ lat: startLat, lng: startLng });
+      setUserPos([startLat, startLng]);
       setActiveMarker(null);
+    } catch (err) {
+      console.error(err);
+      setErreur("Erreur du calcul d'itinéraire.");
+    } finally {
       setLoading(false);
-    });
+    }
   };
 
   const handleUtiliserGeoloc = () => {
@@ -193,30 +137,6 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
       {isSingleMode && (
         <div className="routingPanel">
           <p className="routingTitre">🗺️ Itinéraire vers ce commerce</p>
-          <div className="transportModeSelector">
-            <label>
-              <input
-                type="radio"
-                name="transportMode"
-                value="TRANSIT"
-                checked={transportMode === "TRANSIT"}
-                onChange={() => setTransportMode("TRANSIT")}
-                disabled={loading}
-              />
-              Bus
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="transportMode"
-                value="DRIVING"
-                checked={transportMode === "DRIVING"}
-                onChange={() => setTransportMode("DRIVING")}
-                disabled={loading}
-              />
-              Voiture
-            </label>
-          </div>
           <div className="routingActions">
             <button onClick={handleUtiliserGeoloc} disabled={loading} className="btnGeoloc">
               📍 Utiliser ma position
