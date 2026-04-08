@@ -8,6 +8,13 @@ const CENTRE_DEFAUT = { lat: 44.5, lng: -0.5 };
 const ZOOM_DEFAUT = 7;
 const LIBRARIES = ["places"];
 
+const parsePoint = (point) => {
+  if (!point) return null;
+  const lat = Number(point.lat);
+  const lng = Number(point.lng);
+  return Number.isFinite(lat) && Number.isFinite(lng) ? { lat, lng } : null;
+};
+
 export default function MapView({ entreprises, hauteur = "420px" }) {
   const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   const { isLoaded, loadError } = useLoadScript({
@@ -16,7 +23,13 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
   });
 
   const avecCoords = useMemo(
-    () => entreprises.filter((e) => e.coordonnees?.lat && e.coordonnees?.lng),
+    () =>
+      entreprises
+        .map((e) => ({
+          ...e,
+          coordonnees: parsePoint(e.coordonnees),
+        }))
+        .filter((e) => e.coordonnees !== null),
     [entreprises]
   );
 
@@ -61,9 +74,11 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
       if (data.code !== "Ok") throw new Error("Impossible de calculer l'itinéraire");
 
       // OSRM renvoie des coordonnées au format [lng, lat], Leaflet attend [lat, lng]
-      const coords = data.routes[0].geometry.coordinates.map(c => [c[1], c[0]]);
+      const coords = data.routes[0].geometry.coordinates
+        .map((c) => ({ lat: Number(c[1]), lng: Number(c[0]) }))
+        .filter((pos) => Number.isFinite(pos.lat) && Number.isFinite(pos.lng));
       setRouteCoords(coords);
-      setUserPos([startLat, startLng]);
+      setUserPos({ lat: Number(startLat), lng: Number(startLng) });
       setActiveMarker(null);
     } catch (err) {
       console.error(err);
