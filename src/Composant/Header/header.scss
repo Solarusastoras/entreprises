@@ -24,7 +24,7 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
   color: var(--c-ink);
   flex-shrink: 0;
@@ -32,10 +32,12 @@
   &:hover .logoTexte { opacity: 0.85; }
 }
 
-.logoIcone {
-  font-size: 1.6rem;
-  line-height: 1;
-  flex-shrink: 0;
+.logoImage {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
 }
 
 .logoTexte {

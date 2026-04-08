@@ -13,8 +13,8 @@ export default function Header() {
       <div className="headerInner">
 
         <Link to="/" className="logo">
-          <span className="logoIcone">🏪</span>
-          <span className="logoTexte">Commerces<em>Locaux</em></span>
+          <img src="/entreprises.png" alt="Entreprise" className="logoImage" />
+          <span className="logoTexte">Entreprises</span>
         </Link>
 
         <nav className="nav">

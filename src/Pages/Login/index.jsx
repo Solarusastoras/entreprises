@@ -30,8 +30,8 @@ export default function Login() {
     <div className="loginPage">
       <div className="loginCard">
         <div className="loginLogo">
-          <span>🏪</span>
-          <h1>CommercesLocaux</h1>
+          <img src="/entreprises.png" alt="Entreprises" className="loginLogoImage" />
+          <h1>Entreprises</h1>
         </div>
 
         <p className="loginSous">Connectez-vous pour gérer l'annuaire</p>
