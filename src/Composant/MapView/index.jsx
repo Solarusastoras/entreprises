@@ -47,8 +47,6 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
   const [loading, setLoading] = useState(false);
   const [erreur, setErreur] = useState("");
   const [userPos, setUserPos] = useState(null);
-  const [busStops, setBusStops] = useState([]);
-  const [showBusStops, setShowBusStops] = useState(false);
   const [activeMarker, setActiveMarker] = useState(null);
   const mapRef = useRef(null);
 
@@ -59,46 +57,16 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
     return avecCoords.map((e) => ({ lat: e.coordonnees.lat, lng: e.coordonnees.lng }));
   }, [avecCoords, routeCoords]);
 
-  const fetchBusStops = useCallback(async () => {
-    if (!window.google?.maps?.places) return;
-
-    const service = new window.google.maps.places.PlacesService(document.createElement('div'));
-
-    const request = {
-      bounds: new window.google.maps.LatLngBounds(
-        new window.google.maps.LatLng(BEARN_BOUNDS.south, BEARN_BOUNDS.west),
-        new window.google.maps.LatLng(BEARN_BOUNDS.north, BEARN_BOUNDS.east)
-      ),
-      type: 'bus_station',
-      fields: ['name', 'geometry', 'place_id']
-    };
-
-    service.nearbySearch(request, (results, status) => {
-      if (status === window.google.maps.places.PlacesServiceStatus.OK && results) {
-        const stops = results.map(result => ({
-          id: result.place_id,
-          name: result.name,
-          position: {
-            lat: result.geometry.location.lat(),
-            lng: result.geometry.location.lng()
-          }
-        }));
-        setBusStops(stops);
-      }
-    });
-  }, []);
-
   const onMapLoad = useCallback((map) => {
     mapRef.current = map;
   }, []);
 
   useEffect(() => {
-    if (showBusStops && isLoaded) {
-      fetchBusStops();
-    } else {
-      setBusStops([]);
-    }
-  }, [showBusStops, isLoaded, fetchBusStops]);
+    if (!mapRef.current || allMapPoints.length === 0) return;
+    const bounds = new window.google.maps.LatLngBounds();
+    allMapPoints.forEach((pos) => bounds.extend(pos));
+    mapRef.current.fitBounds(bounds, { padding: 40 });
+  }, [allMapPoints]);
 
   const fetchItineraire = async (startLat, startLng) => {
     if (!cible) return;
@@ -187,15 +155,6 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
 
   return (
     <div className="mapWrapper">
-      <div className="mapControls">
-        <button
-          onClick={() => setShowBusStops(!showBusStops)}
-          className={`btnBusStops ${showBusStops ? 'active' : ''}`}
-        >
-          🚌 {showBusStops ? 'Masquer' : 'Afficher'} arrêts de bus
-        </button>
-      </div>
-
       {isSingleMode && (
         <div className="routingPanel">
           <p className="routingTitre">🗺️ Itinéraire vers ce commerce</p>
@@ -238,44 +197,6 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
           },
         }}
       >
-        {busStops.map((stop) => (
-          <Marker
-            key={stop.id}
-            position={stop.position}
-            icon={{
-              url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="#007bff" stroke="white" stroke-width="2"/>
-                  <text x="12" y="16" text-anchor="middle" fill="white" font-size="10" font-weight="bold">🚌</text>
-                </svg>
-              `),
-              scaledSize: new window.google.maps.Size(24, 24),
-              anchor: new window.google.maps.Point(12, 24)
-            }}
-            onClick={() => setActiveMarker(`bus-${stop.id}`)}
-          />
-        ))}
-
-        {activeMarker?.startsWith('bus-') && (
-          (() => {
-            const busStopId = activeMarker.replace('bus-', '');
-            const busStop = busStops.find(stop => stop.id === busStopId);
-            if (!busStop) return null;
-            return (
-              <InfoWindow
-                position={busStop.position}
-                onCloseClick={() => setActiveMarker(null)}
-              >
-                <div className="popup">
-                  <span className="popupIcone">🚌</span>
-                  <strong>{busStop.name}</strong>
-                  <span className="popupSecteur">Arrêt de bus</span>
-                </div>
-              </InfoWindow>
-            );
-          })()
-        )}
-
         {avecCoords.map((e) => {
           const position = { lat: e.coordonnees.lat, lng: e.coordonnees.lng };
           return (
