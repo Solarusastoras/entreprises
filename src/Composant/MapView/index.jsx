@@ -85,6 +85,10 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
     });
   }, []);
 
+  const onMapLoad = useCallback((map) => {
+    mapRef.current = map;
+  }, []);
+
   useEffect(() => {
     if (showBusStops && isLoaded) {
       fetchBusStops();
