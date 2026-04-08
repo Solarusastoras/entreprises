@@ -10,13 +10,21 @@ const LIBRARIES = ["places"];
 
 export default function MapView({ entreprises, hauteur = "420px" }) {
   const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+  console.log("Clé Google Maps API:", apiKey ? "Présente" : "Manquante", apiKey ? "(longueur: " + apiKey.length + ")" : "");
+
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: apiKey || "",
     libraries: LIBRARIES,
   });
 
   const avecCoords = useMemo(
-    () => entreprises.filter((e) => e.coordonnees?.lat && e.coordonnees?.lng),
+    () => entreprises.filter((e) => {
+      const hasCoords = e.coordonnees?.lat && e.coordonnees?.lng;
+      if (!hasCoords) {
+        console.warn("Entreprise sans coordonnées:", e.nom, e.coordonnees);
+      }
+      return hasCoords;
+    }),
     [entreprises]
   );
 
@@ -51,11 +59,27 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
   }, []);
 
   const fetchItineraire = async (startLat, startLng) => {
-    if (!cible) return;
+    if (!cible) {
+      console.error("Aucune cible définie pour l'itinéraire");
+      return;
+    }
     if (!window.google?.maps) {
       setErreur("Impossible d'accéder à l'API Google Maps.");
       return;
     }
+
+    // Validation des coordonnées
+    if (!startLat || !startLng || !cible.coordonnees?.lat || !cible.coordonnees?.lng) {
+      console.error("Coordonnées invalides:", { startLat, startLng, cible: cible.coordonnees });
+      setErreur("Coordonnées invalides pour le calcul d'itinéraire.");
+      return;
+    }
+
+    console.log("Calcul d'itinéraire:", {
+      start: { lat: startLat, lng: startLng },
+      destination: { lat: cible.coordonnees.lat, lng: cible.coordonnees.lng },
+      mode: transportMode
+    });
 
     setLoading(true);
     setErreur("");
@@ -74,19 +98,30 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
       };
     }
 
+    console.log("Requête DirectionsService:", request);
+
     directionsService.route(request, (result, status) => {
+      console.log("Réponse DirectionsService:", { status, result });
+
       if (status !== window.google.maps.DirectionsStatus.OK || !result.routes?.[0]) {
         console.error("DirectionsService status", status, result);
-        setErreur(
-          transportMode === "TRANSIT"
+        let errorMessage = "Erreur du calcul d'itinéraire.";
+        if (status === window.google.maps.DirectionsStatus.ZERO_RESULTS) {
+          errorMessage = transportMode === "TRANSIT"
             ? "Aucun itinéraire en bus trouvé. Essayez la voiture."
-            : "Erreur du calcul d'itinéraire."
-        );
+            : "Aucun itinéraire trouvé pour ces coordonnées.";
+        } else if (status === window.google.maps.DirectionsStatus.OVER_QUERY_LIMIT) {
+          errorMessage = "Limite de requêtes Google Maps atteinte.";
+        } else if (status === window.google.maps.DirectionsStatus.REQUEST_DENIED) {
+          errorMessage = "Requête Google Maps refusée. Vérifiez la clé API.";
+        }
+        setErreur(errorMessage);
         setLoading(false);
         return;
       }
 
       const coords = result.routes[0].overview_path.map((p) => ({ lat: p.lat(), lng: p.lng() }));
+      console.log("Itinéraire calculé avec", coords.length, "points");
       setRouteCoords(coords);
       setUserPos({ lat: startLat, lng: startLng });
       setActiveMarker(null);
