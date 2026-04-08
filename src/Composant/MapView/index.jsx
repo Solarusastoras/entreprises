@@ -56,14 +56,6 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
     return avecCoords.map((e) => ({ lat: e.coordonnees.lat, lng: e.coordonnees.lng }));
   }, [avecCoords, routeCoords]);
 
-  useEffect(() => {
-    if (showBusStops && isLoaded) {
-      fetchBusStops();
-    } else {
-      setBusStops([]);
-    }
-  }, [showBusStops, isLoaded, fetchBusStops]);
-
   const fetchBusStops = useCallback(async () => {
     if (!window.google?.maps?.places) return;
 
@@ -92,6 +84,14 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
       }
     });
   }, []);
+
+  useEffect(() => {
+    if (showBusStops && isLoaded) {
+      fetchBusStops();
+    } else {
+      setBusStops([]);
+    }
+  }, [showBusStops, isLoaded, fetchBusStops]);
 
   const fetchItineraire = async (startLat, startLng) => {
     if (!cible) return;
