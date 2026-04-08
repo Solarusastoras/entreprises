@@ -1,36 +1,23 @@
-import React, { useState, useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from "react-leaflet";
+import React, { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import { GoogleMap, Marker, Polyline, InfoWindow, useLoadScript } from "@react-google-maps/api";
 import { Link } from "react-router-dom";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
 import { iconeParSecteur } from "../../Utils/hooks/helpers.js";
 import "./mapview.scss";
 
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-});
-
-const CENTRE_DEFAUT = [44.5, -0.5];
+const CENTRE_DEFAUT = { lat: 44.5, lng: -0.5 };
 const ZOOM_DEFAUT = 7;
-
-// Petit composant pour adapter la carte à l'itinéraire
-function RoutingFitter({ routeCoords }) {
-  const map = useMap();
-  useEffect(() => {
-    if (routeCoords && routeCoords.length > 0) {
-      const bounds = L.latLngBounds(routeCoords);
-      map.fitBounds(bounds, { padding: [40, 40] });
-    }
-  }, [routeCoords, map]);
-  return null;
-}
+const LIBRARIES = ["places"];
 
 export default function MapView({ entreprises, hauteur = "420px" }) {
-  const avecCoords = entreprises.filter(
-    (e) => e.coordonnees?.lat && e.coordonnees?.lng
+  const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: apiKey || "",
+    libraries: LIBRARIES,
+  });
+
+  const avecCoords = useMemo(
+    () => entreprises.filter((e) => e.coordonnees?.lat && e.coordonnees?.lng),
+    [entreprises]
   );
 
   const isSingleMode = avecCoords.length === 1;
@@ -41,8 +28,27 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
   const [loading, setLoading] = useState(false);
   const [erreur, setErreur] = useState("");
   const [userPos, setUserPos] = useState(null);
+  const [activeMarker, setActiveMarker] = useState(null);
+  const mapRef = useRef(null);
 
-  // Fonction pour récupérer l'itinéraire via OSRM
+  const allMapPoints = useMemo(() => {
+    if (routeCoords.length > 0) {
+      return routeCoords;
+    }
+    return avecCoords.map((e) => ({ lat: e.coordonnees.lat, lng: e.coordonnees.lng }));
+  }, [avecCoords, routeCoords]);
+
+  useEffect(() => {
+    if (!mapRef.current || allMapPoints.length === 0) return;
+    const bounds = new window.google.maps.LatLngBounds();
+    allMapPoints.forEach((pos) => bounds.extend(pos));
+    mapRef.current.fitBounds(bounds, { padding: 40 });
+  }, [allMapPoints]);
+
+  const onMapLoad = useCallback((map) => {
+    mapRef.current = map;
+  }, []);
+
   const fetchItineraire = async (startLat, startLng) => {
     if (!cible) return;
     setLoading(true);
@@ -51,13 +57,13 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
       const url = `https://router.project-osrm.org/route/v1/driving/${startLng},${startLat};${cible.coordonnees.lng},${cible.coordonnees.lat}?overview=full&geometries=geojson`;
       const res = await fetch(url);
       const data = await res.json();
-      
+
       if (data.code !== "Ok") throw new Error("Impossible de calculer l'itinéraire");
-      
-      // OSRM renvoie des coordonnées au format [lng, lat], Leaflet attend [lat, lng]
-      const coords = data.routes[0].geometry.coordinates.map(c => [c[1], c[0]]);
+
+      const coords = data.routes[0].geometry.coordinates.map((c) => ({ lat: c[1], lng: c[0] }));
       setRouteCoords(coords);
-      setUserPos([startLat, startLng]);
+      setUserPos({ lat: startLat, lng: startLng });
+      setActiveMarker(null);
     } catch (err) {
       console.error(err);
       setErreur("Erreur du calcul d'itinéraire.");
@@ -77,7 +83,7 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
       (pos) => {
         fetchItineraire(pos.coords.latitude, pos.coords.longitude);
       },
-      (err) => {
+      () => {
         setErreur("Impossible d'obtenir votre position.");
         setLoading(false);
       }
@@ -93,7 +99,7 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
       const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(adresseDepart)}`;
       const res = await fetch(url);
       const data = await res.json();
-      
+
       if (data && data.length > 0) {
         const result = data[0];
         fetchItineraire(parseFloat(result.lat), parseFloat(result.lon));
@@ -108,17 +114,30 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
     }
   };
 
+  if (!apiKey) {
+    return (
+      <div className="mapWrapper mapError">
+        <p>Clé Google Maps manquante.</p>
+        <p>Ajoutez <strong>REACT_APP_GOOGLE_MAPS_API_KEY</strong> à votre fichier d'environnement.</p>
+      </div>
+    );
+  }
+
+  if (loadError) {
+    return <div className="mapWrapper mapError">Erreur de chargement Google Maps.</div>;
+  }
+
+  if (!isLoaded) {
+    return <div className="mapWrapper mapLoading">Chargement de la carte Google Maps...</div>;
+  }
+
   return (
     <div className="mapWrapper">
       {isSingleMode && (
         <div className="routingPanel">
           <p className="routingTitre">🗺️ Itinéraire vers ce commerce</p>
           <div className="routingActions">
-            <button
-              onClick={handleUtiliserGeoloc}
-              disabled={loading}
-              className="btnGeoloc"
-            >
+            <button onClick={handleUtiliserGeoloc} disabled={loading} className="btnGeoloc">
               📍 Utiliser ma position
             </button>
             <div className="routingSeparator">OU</div>
@@ -139,47 +158,62 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
         </div>
       )}
 
-      <MapContainer
-        center={isSingleMode ? [cible.coordonnees.lat, cible.coordonnees.lng] : CENTRE_DEFAUT}
+      <GoogleMap
+        mapContainerStyle={{ height: hauteur, width: "100%", borderRadius: "var(--radius-md)" }}
+        center={isSingleMode ? { lat: cible.coordonnees.lat, lng: cible.coordonnees.lng } : CENTRE_DEFAUT}
         zoom={isSingleMode ? 14 : ZOOM_DEFAUT}
-        style={{ height: hauteur, width: "100%", zIndex: 1, borderRadius: "var(--radius-md)" }}
-        scrollWheelZoom={false}
+        onLoad={onMapLoad}
+        options={{
+          streetViewControl: false,
+          mapTypeControl: false,
+          fullscreenControl: false,
+          zoomControl: true,
+          clickableIcons: false,
+        }}
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        
-        {avecCoords.map((e) => (
-          <Marker key={e.id} position={[e.coordonnees.lat, e.coordonnees.lng]}>
-            <Popup>
-              <div className="popup">
-                <span className="popupIcone">{iconeParSecteur(e.secteur)}</span>
-                <strong>{e.nom}</strong>
-                <span className="popupSecteur">{e.secteur}</span>
-                <span>{e.adresse}</span>
-                {!isSingleMode && (
-                  <Link to={`/entreprise/${e.id}`} className="popupLien">
-                    Voir la fiche →
-                  </Link>
-                )}
-              </div>
-            </Popup>
-          </Marker>
-        ))}
+        {avecCoords.map((e) => {
+          const position = { lat: e.coordonnees.lat, lng: e.coordonnees.lng };
+          return (
+            <Marker key={e.id} position={position} onClick={() => setActiveMarker(e.id)} />
+          );
+        })}
 
-        {userPos && (
-          <Marker position={userPos}>
-            <Popup>Votre point de départ</Popup>
-          </Marker>
+        {activeMarker && (
+          (() => {
+            const entreprise = avecCoords.find((e) => e.id === activeMarker);
+            if (!entreprise) return null;
+            const position = { lat: entreprise.coordonnees.lat, lng: entreprise.coordonnees.lng };
+            return (
+              <InfoWindow position={position} onCloseClick={() => setActiveMarker(null)}>
+                <div className="popup">
+                  <span className="popupIcone">{iconeParSecteur(entreprise.secteur)}</span>
+                  <strong>{entreprise.nom}</strong>
+                  <span className="popupSecteur">{entreprise.secteur}</span>
+                  <span>{entreprise.adresse}</span>
+                  {!isSingleMode && (
+                    <Link to={`/entreprise/${entreprise.id}`} className="popupLien">
+                      Voir la fiche →
+                    </Link>
+                  )}
+                </div>
+              </InfoWindow>
+            );
+          })()
         )}
+
+        {userPos && <Marker position={userPos} />}
 
         {routeCoords.length > 0 && (
-          <Polyline positions={routeCoords} color="var(--c-accent)" weight={5} opacity={0.7} />
+          <Polyline
+            path={routeCoords}
+            options={{
+              strokeColor: "#ff7a18",
+              strokeOpacity: 0.7,
+              strokeWeight: 5,
+            }}
+          />
         )}
-
-        {routeCoords.length > 0 && <RoutingFitter routeCoords={routeCoords} />}
-      </MapContainer>
+      </GoogleMap>
     </div>
   );
 }
