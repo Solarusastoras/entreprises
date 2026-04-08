@@ -50,6 +50,7 @@ export default function MapView({ entreprises, hauteur = "420px" }) {
   const [busStops, setBusStops] = useState([]);
   const [showBusStops, setShowBusStops] = useState(false);
   const [activeMarker, setActiveMarker] = useState(null);
+  const mapRef = useRef(null);
 
   const allMapPoints = useMemo(() => {
     if (routeCoords.length > 0) {
