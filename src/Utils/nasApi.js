@@ -9,7 +9,7 @@ const LOCAL_STORAGE_KEY = 'entreprises_db';
  * Détermine si l'utilisateur est sur le réseau local (maison).
  */
 // Tunnel HTTPS actif (localhost.run vers le Mini PC)
-const API_BASE_URL = 'https://7cecd9e3d9b451.lhr.life';
+const API_BASE_URL = 'https://api.solarusweb.ovh';
 
 /**
  * Helper avec un timeout pour éviter que l'UI ne gèle si le NAS est éteint
