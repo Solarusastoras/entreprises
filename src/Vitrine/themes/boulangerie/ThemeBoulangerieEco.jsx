@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Leaf, Map, Compass, MapPin } from 'lucide-react';
-import FavoriteButton from '../components/common/FavoriteButton';
+import { Wheat, Map, Compass, MapPin } from 'lucide-react';
+import FavoriteButton from '../../components/common/FavoriteButton';
 
-export default function ThemeEco({ siteData, products }) {
+export default function ThemeBoulangerieEco({ siteData, products }) {
    const [userAddress, setUserAddress] = useState('');
    const [mapUrl, setMapUrl] = useState(siteData?.mapsIframeUrl);
    if (!siteData) return null;
@@ -29,14 +29,14 @@ export default function ThemeEco({ siteData, products }) {
    };
 
    return (
-      <div className="theme-eco">
+      <div className="theme-boulangerie-eco">
 
          <section className="eco-hero-section">
             <div className="e-hero-img-box">
                <img src={products[0]?.img || 'https://images.unsplash.com/photo-1515343483120-f4991f21b3f5?w=1200&q=80'} alt="Eco Hero" />
             </div>
             <div>
-               <h1>Naturellement<br />{siteData.nomEntreprise}</h1>
+               <h1>Au levain naturel<br />{siteData.nomEntreprise}</h1>
                <p>{siteData.descriptionCourte}</p>
                <button className="eco-btn">
                   Découvrir Notre Univers
@@ -46,8 +46,8 @@ export default function ThemeEco({ siteData, products }) {
 
          <section id="about" className="eco-about-section">
             <div className="about-content">
-               <Leaf size={40} className="eco-icon" />
-               <h2>Engagement {siteData.metier}</h2>
+               <Wheat size={40} className="eco-icon" />
+               <h2>L'artisanat boulanger</h2>
                <p>
                   {siteData.descriptionLongue}
                </p>
@@ -57,7 +57,7 @@ export default function ThemeEco({ siteData, products }) {
          <section id="products" className="eco-products-section">
             <div className="section-header">
                <h2>Sélection Responsable</h2>
-               <p>Cultivé avec soin, partagé avec passion.</p>
+               <p>Pétri avec soin, cuit avec passion.</p>
             </div>
             <div className="products-grid">
                {products.map((p, i) => (
@@ -80,8 +80,8 @@ export default function ThemeEco({ siteData, products }) {
             <div className="contact-card">
                <div>
                   <div className="title-box">
-                     <Leaf size={24} style={{ color: 'var(--eco-primary)' }} />
-                     <h2>Notre Écrin</h2>
+                     <Wheat size={24} style={{ color: 'var(--eco-primary)' }} />
+                     <h2>Notre Fournil</h2>
                   </div>
                   <p className="address"><Map size={20} /> {siteData.adresse}</p>
 
@@ -129,7 +129,7 @@ export default function ThemeEco({ siteData, products }) {
 
          <footer>
             <div className="footer-logo">{siteData.nomEntreprise}</div>
-            <p>Respect de la terre • Engagement quotidien • 2026</p>
+            <p>Farines locales • Levain naturel • Tradition • 2026</p>
          </footer>
       </div>
    );

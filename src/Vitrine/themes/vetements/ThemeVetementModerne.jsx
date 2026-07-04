@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { MapPin, Navigation, ArrowRight, ArrowDown } from 'lucide-react';
-import FavoriteButton from '../components/common/FavoriteButton';
+import FavoriteButton from '../../components/common/FavoriteButton';
 
-export default function ThemeModerne({ siteData, products }) {
+export default function ThemeVetementModerne({ siteData, products }) {
    const [userAddress, setUserAddress] = useState('');
    const [mapUrl, setMapUrl] = useState(siteData?.mapsIframeUrl);
    if (!siteData) return null;
@@ -14,7 +14,7 @@ export default function ThemeModerne({ siteData, products }) {
    };
 
    return (
-      <div className="theme-moderne">
+      <div className="theme-vetement-moderne">
 
          {/* 📐 HERO - MAGAZINE STYLE */}
          <section className="moderne-hero-section">
@@ -43,7 +43,7 @@ export default function ThemeModerne({ siteData, products }) {
             <div className="section-header m-slide">
                <div className="header-title">
                   <span>SELECTED ITEMS</span>
-                  <h2>DESIGN <span className="m-accent-blue">STRIKE</span></h2>
+                  <h2>FASHION <span className="m-accent-blue">TREND</span></h2>
                </div>
                <ArrowDown size={48} className="m-accent-blue" />
             </div>

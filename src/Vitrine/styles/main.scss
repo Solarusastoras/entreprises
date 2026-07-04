@@ -9,4 +9,14 @@
 @use './themes/minimal';
 @use './themes/moderne';
 @use './themes/vintage';
+@use '../themes/boulangerie/boulangerie-eco';
+@use '../themes/boulangerie/boulangerie-luxe';
+@use '../themes/boulangerie/boulangerie-minimal';
+@use '../themes/boulangerie/boulangerie-moderne';
+@use '../themes/boulangerie/boulangerie-vintage';
+@use '../themes/vetements/vetement-eco';
+@use '../themes/vetements/vetement-luxe';
+@use '../themes/vetements/vetement-minimal';
+@use '../themes/vetements/vetement-moderne';
+@use '../themes/vetements/vetement-vintage';
 // Add more theme imports here as they are created

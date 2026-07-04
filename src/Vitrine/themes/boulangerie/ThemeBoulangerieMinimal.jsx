@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { MapPin, Navigation, Compass } from 'lucide-react';
-import FavoriteButton from '../components/common/FavoriteButton';
+import FavoriteButton from '../../components/common/FavoriteButton';
 
-export default function ThemeMinimal({ siteData, products }) {
+export default function ThemeBoulangerieMinimal({ siteData, products }) {
   const [userAddress, setUserAddress] = useState('');
   const [mapUrl, setMapUrl] = useState(siteData?.mapsIframeUrl);
   if (!siteData) return null;
@@ -29,7 +29,7 @@ export default function ThemeMinimal({ siteData, products }) {
   };
 
   return (
-    <div className="theme-minimal">
+    <div className="theme-boulangerie-minimal">
 
       <section className="minimal-hero-section">
         <div className="hero-content">
@@ -45,7 +45,7 @@ export default function ThemeMinimal({ siteData, products }) {
       <section id="about" className="minimal-about-section">
         <div className="about-content">
           <div className="minimal-divider"></div>
-          <h2>Une Approche Pure</h2>
+          <h2>L'Essentiel du Pain</h2>
           <p>
             {siteData.descriptionLongue}
           </p>

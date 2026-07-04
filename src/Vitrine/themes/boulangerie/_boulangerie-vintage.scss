@@ -1,0 +1,381 @@
+.theme-boulangerie-vintage {
+  background: url('https://www.transparenttextures.com/patterns/parchment.png'), #fdf5e6;
+  color: #3d2b1f;
+  position: relative;
+  font-family: 'Special Elite', cursive;
+  min-height: 100vh;
+
+  .v-paper-texture {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png');
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .v-polaroid-container {
+     position: relative;
+  }
+
+  .v-polaroid {
+    background: white;
+    padding: 15px 15px 40px 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: rotate(-3deg);
+    border: 1px solid #ddd;
+
+    img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .polaroid-caption {
+      margin-top: 20px;
+      font-family: monospace;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  }
+
+  .v-gazette-border {
+    border: 4px double #3d2b1f;
+    padding: 40px;
+    background: rgba(255,255,255,0.3);
+  }
+
+  // Section Styles
+  .vintage-hero-section {
+    padding: 40px 10%;
+    display: grid;
+    grid-template-columns: minmax(300px, 400px) 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+
+    .hero-header {
+      position: absolute;
+      top: -100px;
+      left: 10%;
+
+      h1 {
+        font-size: 4rem;
+        font-family: serif;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #3d2b1f;
+        margin-bottom: 0;
+      }
+
+      .est-tag {
+        font-size: 1rem;
+        font-family: monospace;
+        opacity: 0.6;
+      }
+    }
+
+    .about-text {
+      h2 {
+        font-size: 3rem;
+        font-family: serif;
+        margin-bottom: 30px;
+      }
+
+      p {
+        font-size: 1.4rem;
+        line-height: 2.2;
+        font-family: monospace;
+      }
+    }
+  }
+
+  .vintage-reference-section {
+    padding: 80px 10%;
+    position: relative;
+    z-index: 10;
+
+    .section-title-box {
+      text-align: center;
+      padding: 20px 0;
+      border-top: 2px solid #3d2b1f;
+      border-bottom: 2px solid #3d2b1f;
+      margin-bottom: 80px;
+
+      h3 {
+        font-size: 2.5rem;
+        font-family: serif;
+      }
+    }
+
+    .reference-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 60px;
+    }
+
+    .article-card {
+      text-align: center;
+
+      .img-wrapper {
+        border: 1px solid rgba(0,0,0,0.1);
+        background: #fff;
+        padding: 10px;
+        box-shadow: 5px 5px 0px rgba(0,0,0,0.05);
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
+          filter: sepia(0.2);
+        }
+
+        .tag-circle {
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          background: #8b5a2b;
+          color: #fff;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 10px;
+          font-weight: 900;
+          transform: rotate(15deg);
+          border: 2px dashed #fff;
+          line-height: 1;
+          text-align: center;
+          padding: 5px;
+        }
+      }
+
+      h4 {
+        font-size: 1.8rem;
+        margin-top: 20px;
+        font-family: serif;
+      }
+
+      p {
+        font-family: monospace;
+        opacity: 0.7;
+        font-size: 0.9rem;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .vintage-almanach-section {
+    padding: 80px 10%;
+    position: relative;
+    z-index: 10;
+
+    .almanach-header {
+      text-align: center;
+      margin-bottom: 40px;
+
+      span {
+        font-size: 12px;
+        letter-spacing: 4px;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 3rem;
+        font-family: serif;
+      }
+
+      .divider {
+        height: 4px;
+        border-top: 1px solid #3d2b1f;
+        border-bottom: 1px solid #3d2b1f;
+        margin-top: 10px;
+      }
+    }
+
+    .almanach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .col-left {
+      h3 {
+        font-size: 2rem;
+        font-family: serif;
+        margin-bottom: 20px;
+      }
+
+      .address {
+        font-size: 1.5rem;
+        font-family: monospace;
+        line-height: 1.8;
+      }
+
+      .desc {
+        margin-top: 20px;
+        font-family: monospace;
+        opacity: 0.8;
+      }
+
+      .itinerary-box {
+        margin-top: 40px;
+        background: rgba(255,255,255,0.4);
+        padding: 20px;
+        border: 1px solid #3d2b1f;
+        border-radius: 4px;
+
+        h4 {
+          font-size: 1rem;
+          font-family: serif;
+          margin-bottom: 15px;
+        }
+
+        .input-group {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 10px;
+
+          .btn-loc {
+            background: #3d2b1f;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+          }
+
+          input {
+            flex: 1;
+            background: transparent;
+            border: 1px solid #3d2b1f;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 12px;
+          }
+        }
+
+        .btn-itinerary {
+          width: 100%;
+          background: #3d2b1f;
+          color: #fff;
+          border: none;
+          padding: 12px;
+          font-weight: 900;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          font-size: 12px;
+          cursor: pointer;
+          font-family: serif;
+        }
+      }
+
+      .map-frame {
+        height: 300px;
+        margin-top: 20px;
+        border: 1px solid #3d2b1f;
+        filter: grayscale(1);
+
+        iframe {
+          border: 0;
+        }
+      }
+    }
+
+    .col-right {
+      h3 {
+        font-size: 2rem;
+        font-family: serif;
+        margin-bottom: 20px;
+      }
+
+      .horaires-list {
+        list-style: none;
+        padding: 0;
+
+        li {
+          display: flex;
+          justify-content: space-between;
+          padding: 12px 0;
+          border-bottom: 1px dotted #3d2b1f;
+          font-family: monospace;
+          font-size: 1.1rem;
+
+          strong {
+            text-transform: capitalize;
+          }
+        }
+      }
+
+      .stamp-box {
+        margin-top: 50px;
+        text-align: center;
+
+        .stamp {
+          border: 4px solid #8b5a2b;
+          color: #8b5a2b;
+          display: inline-block;
+          padding: 10px 30px;
+          transform: rotate(-10deg);
+          font-size: 1.5rem;
+          font-weight: 900;
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+
+  footer {
+    padding: 60px 0;
+    text-align: center;
+    font-family: serif;
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 1024px) {
+    .vintage-hero-section, .vintage-reference-section, .vintage-almanach-section {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .vintage-hero-section {
+      grid-template-columns: 1fr;
+      padding: 100px 20px 40px;
+      text-align: center;
+      gap: 40px;
+
+      .hero-header {
+        position: static;
+        margin-bottom: 40px;
+        h1 { font-size: 2.5rem; }
+      }
+
+      .v-polaroid {
+        margin: 0 auto;
+        max-width: 300px;
+      }
+    }
+
+    .vintage-reference-section {
+      padding: 60px 20px;
+      .section-title-box h3 { font-size: 1.8rem; }
+      .reference-grid { gap: 40px; }
+    }
+
+    .vintage-almanach-section {
+      padding: 60px 20px;
+      .almanach-header h2 { font-size: 2.2rem; }
+      .almanach-grid { grid-template-columns: 1fr; gap: 60px; }
+      .col-left .address { font-size: 1.2rem; }
+    }
+  }
+}

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { MapPin, Navigation, Compass, Edit } from 'lucide-react';
-import FavoriteButton from '../components/common/FavoriteButton';
+import FavoriteButton from '../../components/common/FavoriteButton';
 
-export default function ThemeLuxe({ siteData, products, isEditable, onEditProduct }) {
+export default function ThemeBoulangerieLuxe({ siteData, products, isEditable, onEditProduct }) {
   const [userAddress, setUserAddress] = useState('');
   const [mapUrl, setMapUrl] = useState(siteData?.mapsIframeUrl);
   const [activeCategory, setActiveCategory] = useState('Tous');
@@ -31,7 +31,7 @@ export default function ThemeLuxe({ siteData, products, isEditable, onEditProduc
   };
 
   return (
-    <div className="theme-luxe">
+    <div className="theme-boulangerie-luxe">
       <div className="l-border-frame"></div>
 
       {/* 1. HERO ÉDITORIAL ASYMÉTRIQUE */}
@@ -42,7 +42,7 @@ export default function ThemeLuxe({ siteData, products, isEditable, onEditProduc
         ></div>
 
         <div className="l-hero-inner reveal">
-          <span className="l-gold-text hero-tag">MAISON ARTISANALE</span>
+          <span className="l-gold-text hero-tag">MAISON DE HAUTE PÂTISSERIE</span>
           <h1>
             {siteData.nomEntreprise.split(' ').map((word, i) => (
               <div key={i}>{word}</div>
@@ -62,11 +62,11 @@ export default function ThemeLuxe({ siteData, products, isEditable, onEditProduc
             <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?q=80&w=1200" alt="Work" />
             <div className="about-overlay">
               <h3>SAVOIR-FAIRE</h3>
-              <p>Une exigence de chaque instant pour des créations d'exception.</p>
+              <p>Une exigence de chaque instant pour des pains et pâtisseries d'exception.</p>
             </div>
           </div>
           <div className="about-text reveal">
-            <h2>L'Art de <br />{siteData.metier}</h2>
+            <h2>L'Artisanat <br />Boulanger</h2>
             <p>
               {siteData.descriptionLongue}
             </p>

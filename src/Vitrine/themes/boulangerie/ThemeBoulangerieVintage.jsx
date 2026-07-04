@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { MapPin, Navigation, Compass } from 'lucide-react';
-import FavoriteButton from '../components/common/FavoriteButton';
+import FavoriteButton from '../../components/common/FavoriteButton';
 
-export default function ThemeVintage({ siteData, products }) {
+export default function ThemeBoulangerieVintage({ siteData, products }) {
    const [userAddress, setUserAddress] = useState('');
    const [mapUrl, setMapUrl] = useState(siteData?.mapsIframeUrl);
    if (!siteData) return null;
@@ -29,7 +29,7 @@ export default function ThemeVintage({ siteData, products }) {
    };
 
    return (
-      <div className="theme-vintage">
+      <div className="theme-boulangerie-vintage">
          {/* La texture est maintenant gérée par le background CSS de la classe .theme-vintage */}
 
          <section className="vintage-hero-section">
@@ -42,7 +42,7 @@ export default function ThemeVintage({ siteData, products }) {
                   <img src={products[0]?.img || 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1200&q=80'} alt="Vintage Hero" />
                   <FavoriteButton productId={products[0]?.id} />
                   <div className="polaroid-caption">
-                     Authenticité & Savoir-faire
+                     Fournée & Tradition
                   </div>
                </div>
             </div>
@@ -56,7 +56,7 @@ export default function ThemeVintage({ siteData, products }) {
 
          <section className="vintage-reference-section">
             <div className="section-title-box">
-               <h3>~ Nos Articles de Référence ~</h3>
+               <h3>~ Nos Pains & Spécialités ~</h3>
             </div>
             <div className="reference-grid">
                {products.map((p, i) => (
@@ -81,7 +81,7 @@ export default function ThemeVintage({ siteData, products }) {
             <div className="v-gazette-border">
                <div className="almanach-header">
                   <span>ÉDITION SPÉCIALE • 2026</span>
-                  <h2>L'ALMANACH DE LA BOUTIQUE</h2>
+                  <h2>L'ALMANACH DU FOURNIL</h2>
                   <div className="divider"></div>
                </div>
 

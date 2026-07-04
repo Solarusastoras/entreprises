@@ -9,12 +9,19 @@ import ThemeRestoModerne from '../../themes/restaurant/ThemeRestoModerne';
 import ThemeRestoRustique from '../../themes/restaurant/ThemeRestoRustique';
 import ThemeRestoBistro from '../../themes/restaurant/ThemeRestoBistro';
 
-// Business Themes
-import ThemeLuxe from '../../themes/ThemeLuxe';
-import ThemeVintage from '../../themes/ThemeVintage';
-import ThemeMinimal from '../../themes/ThemeMinimal';
-import ThemeModerne from '../../themes/ThemeModerne';
-import ThemeEco from '../../themes/ThemeEco';
+// Boulangerie Themes
+import ThemeBoulangerieLuxe from '../../themes/boulangerie/ThemeBoulangerieLuxe';
+import ThemeBoulangerieVintage from '../../themes/boulangerie/ThemeBoulangerieVintage';
+import ThemeBoulangerieMinimal from '../../themes/boulangerie/ThemeBoulangerieMinimal';
+import ThemeBoulangerieModerne from '../../themes/boulangerie/ThemeBoulangerieModerne';
+import ThemeBoulangerieEco from '../../themes/boulangerie/ThemeBoulangerieEco';
+
+// Vetements Themes
+import ThemeVetementLuxe from '../../themes/vetements/ThemeVetementLuxe';
+import ThemeVetementVintage from '../../themes/vetements/ThemeVetementVintage';
+import ThemeVetementMinimal from '../../themes/vetements/ThemeVetementMinimal';
+import ThemeVetementModerne from '../../themes/vetements/ThemeVetementModerne';
+import ThemeVetementEco from '../../themes/vetements/ThemeVetementEco';
 
 export default function ThemeRenderer() {
   const { siteData, products, isClientConnected, setEditingProduct, currentStyle, category, isRestaurant } = useApp();
@@ -58,12 +65,24 @@ export default function ThemeRenderer() {
     }
   }
 
+  const isVetement = category && (category.toLowerCase().includes('vêtement') || category.toLowerCase().includes('vetement') || category.toLowerCase().includes('mode') || category.toLowerCase().includes('habit'));
+  if (isVetement) {
+    switch(currentStyle) {
+      case 1: return <ThemeVetementLuxe {...themeProps} />;
+      case 2: return <ThemeVetementVintage {...themeProps} />;
+      case 3: return <ThemeVetementMinimal {...themeProps} />;
+      case 4: return <ThemeVetementModerne {...themeProps} />;
+      case 5: return <ThemeVetementEco {...themeProps} />;
+      default: return <ThemeVetementMinimal {...themeProps} />;
+    }
+  }
+
   switch(currentStyle) {
-    case 1: return <ThemeLuxe {...themeProps} />;
-    case 2: return <ThemeVintage {...themeProps} />;
-    case 3: return <ThemeMinimal {...themeProps} />;
-    case 4: return <ThemeModerne {...themeProps} />;
-    case 5: return <ThemeEco {...themeProps} />;
-    default: return <ThemeMinimal {...themeProps} />;
+    case 1: return <ThemeBoulangerieLuxe {...themeProps} />;
+    case 2: return <ThemeBoulangerieVintage {...themeProps} />;
+    case 3: return <ThemeBoulangerieMinimal {...themeProps} />;
+    case 4: return <ThemeBoulangerieModerne {...themeProps} />;
+    case 5: return <ThemeBoulangerieEco {...themeProps} />;
+    default: return <ThemeBoulangerieMinimal {...themeProps} />;
   }
 }
