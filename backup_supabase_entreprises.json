@@ -1,0 +1,2702 @@
+[
+  {
+    "id": 2,
+    "nom": "COLLECTOR PAU",
+    "secteur": "Collectionneur",
+    "description": "N°1 du Rachat d'Or, Bijoux, Monnaies, Antiquités et Collections",
+    "adresse": "15 Rue Jean Monnet, 64000 Pau",
+    "telephone": "0559601948",
+    "email": "",
+    "horaires": {
+      "jeudi": "09:30–12:00 /  14:00–18:30",
+      "lundi": "Fermé",
+      "mardi": "09:30–12:00 /  14:00–18:30",
+      "samedi": "09:30–12:00 /  14:00–18:30",
+      "dimanche": "Fermé",
+      "mercredi": "09:30–12:00 /  14:00–18:30",
+      "vendredi": "09:30–12:00 /  14:00–18:30"
+    },
+    "coordonnees": {
+      "lat": 43.2989806,
+      "lng": -0.3705475
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T08:24:12.024211+00:00"
+  },
+  {
+    "id": 1,
+    "nom": "Boucherie halal Zayan",
+    "secteur": "Boucherie",
+    "description": "Boucherie-charcuterie",
+    "adresse": "20 Cr Lyautey, 64000 Pau",
+    "telephone": "0766914922",
+    "email": "",
+    "horaires": {
+      "jeudi": "09:30–18:30",
+      "lundi": "09:30–18:30",
+      "mardi": "09:30–18:30",
+      "samedi": "09:30–18:30",
+      "dimanche": "09:30–18:30",
+      "mercredi": "09:30–18:30",
+      "vendredi": "09:30–18:30"
+    },
+    "coordonnees": {
+      "lat": 43.3070024,
+      "lng": -0.3643217
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T08:21:15.752195+00:00"
+  },
+  {
+    "id": 3,
+    "nom": "Le Cocoon",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "9 Rue de Foix, 64000 Pau",
+    "telephone": "0547418601",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–14:00 / 19:00–21:00",
+      "lundi": "12:00–14:00 / 19:00–21:00",
+      "mardi": "12:00–14:00",
+      "samedi": "12:00–14:00 / 19:00–21:00",
+      "dimanche": "12:00–14:00",
+      "mercredi": "Fermé",
+      "vendredi": "19:00–21:00"
+    },
+    "coordonnees": {
+      "lat": 43.295033,
+      "lng": -0.376583
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T08:34:03.571669+00:00"
+  },
+  {
+    "id": 4,
+    "nom": "JÒÏA MÂA",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "1 Rue du Hedas, 64000 Pau",
+    "telephone": "0559275606",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–13:30   /  19:30–21:30",
+      "lundi": "Fermé",
+      "mardi": "12:00–13:30",
+      "samedi": "12:00–13:30",
+      "dimanche": "Fermé",
+      "mercredi": "12:00–13:30",
+      "vendredi": "19:30–21:30"
+    },
+    "coordonnees": {
+      "lat": 43.2966514,
+      "lng": -0.3759871
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T08:37:38.628158+00:00"
+  },
+  {
+    "id": 5,
+    "nom": "Le Bœuf Royal",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "7 Rue du Moulin, 64000 Pau",
+    "telephone": "0559622379",
+    "email": "",
+    "horaires": {
+      "jeudi": "19:00–23:00",
+      "lundi": "19:00–23:00",
+      "mardi": "19:00–23:00",
+      "samedi": "19:00–23:00",
+      "dimanche": "Fermé",
+      "mercredi": "19:00–23:00",
+      "vendredi": "19:00–23:00"
+    },
+    "coordonnees": {
+      "lat": 43.298802,
+      "lng": -0.3788837
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T08:40:26.534964+00:00"
+  },
+  {
+    "id": 6,
+    "nom": "VINDO",
+    "secteur": "Restaurant",
+    "description": "Restaurant et Tapas",
+    "adresse": "20 Rue Marca, 64000 Pau",
+    "telephone": "0559608443",
+    "email": "",
+    "horaires": {
+      "jeudi": "08:30–14:00  /  19:00–22:00",
+      "lundi": "08:30–14:00",
+      "mardi": "08:30–14:00",
+      "samedi": "08:30–14:00  /  19:00–22:00",
+      "dimanche": "Fermé",
+      "mercredi": "08:30–14:00",
+      "vendredi": "08:30–14:00  /  19:00–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.2969826,
+      "lng": -0.3834434
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T08:46:17.100155+00:00"
+  },
+  {
+    "id": 7,
+    "nom": "Resto Dit Vin",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "8 Rue de Foix, 64000 Pau",
+    "telephone": "0559600014",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–14:00",
+      "lundi": "12:00–14:00",
+      "mardi": "12:00–14:00",
+      "samedi": "Fermé",
+      "dimanche": "Fermé",
+      "mercredi": "12:00–14:00",
+      "vendredi": "12:00–14:00"
+    },
+    "coordonnees": {
+      "lat": 43.2949884,
+      "lng": -0.3763988
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T08:50:47.746931+00:00"
+  },
+  {
+    "id": 8,
+    "nom": "MAISON GRAMONT",
+    "secteur": "Restaurant",
+    "description": "Salon de thé",
+    "adresse": "5 Pl. Gramont, 64000 Pau",
+    "telephone": "0681347945",
+    "email": "",
+    "horaires": {
+      "jeudi": "09:30–18:30",
+      "lundi": "Fermé",
+      "mardi": "09:30–18:30",
+      "samedi": "09:30–18:30",
+      "dimanche": "Fermé",
+      "mercredi": "09:30–18:30",
+      "vendredi": "09:30–18:30"
+    },
+    "coordonnees": {
+      "lat": 43.298802,
+      "lng": -0.3788837
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T08:54:37.660926+00:00"
+  },
+  {
+    "id": 10,
+    "nom": "O Churrasco",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "22 Av. de la Résistance, 64000 Pau",
+    "telephone": "0771081552",
+    "email": "",
+    "horaires": {
+      "jeudi": "Fermé",
+      "lundi": "Fermé",
+      "mardi": "Fermé",
+      "samedi": "10:00–14:00  /  18:00–21:00",
+      "dimanche": "10:00–14:00",
+      "mercredi": "Fermé",
+      "vendredi": "Fermé"
+    },
+    "coordonnees": {
+      "lat": 43.298802,
+      "lng": -0.3788837
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T09:02:28.324754+00:00"
+  },
+  {
+    "id": 11,
+    "nom": "Le Canard Royal",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "13 Rue du Moulin, 64000 Pau",
+    "telephone": "0559600057",
+    "email": "",
+    "horaires": {
+      "jeudi": "19:00–22:00",
+      "lundi": "19:00–22:00",
+      "mardi": "19:00–22:00",
+      "samedi": "19:00–22:30",
+      "dimanche": "Fermé",
+      "mercredi": "19:00–22:00",
+      "vendredi": "19:00–22:30"
+    },
+    "coordonnees": {
+      "lat": 43.2986849,
+      "lng": -0.3850527
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T09:06:46.79922+00:00"
+  },
+  {
+    "id": 12,
+    "nom": "Le Bombay ",
+    "secteur": "Restaurant",
+    "description": "Restaurant Tandoori",
+    "adresse": "5 Rue d'Etigny, 64000 Pau",
+    "telephone": "0559802823",
+    "email": "",
+    "horaires": {
+      "jeudi": "19:00–22:00",
+      "lundi": "Fermé",
+      "mardi": "19:00–22:00",
+      "samedi": "19:00–22:00",
+      "dimanche": "Fermé",
+      "mercredi": "19:00–22:00",
+      "vendredi": "19:00–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.298802,
+      "lng": -0.3788837
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T09:09:35.978017+00:00"
+  },
+  {
+    "id": 13,
+    "nom": "Yūgō",
+    "secteur": "Restaurant",
+    "description": "Restaurant japonais",
+    "adresse": "19 Rue des Cordeliers, 64000 Pau",
+    "telephone": "0749052995",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–14:00  /  19:30–21:30",
+      "lundi": "Fermé",
+      "mardi": "Fermé",
+      "samedi": "12:00–14:00  /  19:30–21:30",
+      "dimanche": "Fermé",
+      "mercredi": "12:00–14:00  /  19:30–21:30",
+      "vendredi": "12:00–14:00  /  19:30–21:30"
+    },
+    "coordonnees": {
+      "lat": 43.2965698,
+      "lng": -0.3758396
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T09:12:54.953305+00:00"
+  },
+  {
+    "id": 14,
+    "nom": "La Fiancée du Désert",
+    "secteur": "Restaurant",
+    "description": "Restaurant arménien",
+    "adresse": "21 Rue Tran, 64000 Pau",
+    "telephone": "0559272758",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–14:00  /  19:00–22:00",
+      "lundi": "Fermé",
+      "mardi": "12:00–14:00  /  19:00–22:00",
+      "samedi": "12:00–14:00  /  19:00–22:00",
+      "dimanche": "Fermé",
+      "mercredi": "12:00–14:00  /  19:00–22:00",
+      "vendredi": "12:00–14:00  /  19:00–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.298802,
+      "lng": -0.3788837
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T09:22:48.419142+00:00"
+  },
+  {
+    "id": 15,
+    "nom": "Le Henri IV",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "18 Rue Henri IV, 64000 Pau",
+    "telephone": "0564723613",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–13:30 / 19:30–21:30",
+      "lundi": "12:00–13:30 / 19:30–21:30",
+      "mardi": "Fermé",
+      "samedi": "12:00–13:30 / 19:30–21:30",
+      "dimanche": "12:00–13:30 / 19:30–21:30",
+      "mercredi": "Fermé",
+      "vendredi": "12:00–13:30 / 19:30–21:30"
+    },
+    "coordonnees": {
+      "lat": null,
+      "lng": -0.3743306
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T09:33:06.393961+00:00"
+  },
+  {
+    "id": 16,
+    "nom": "Colher de Pau",
+    "secteur": "Restaurant",
+    "description": "Snack",
+    "adresse": "46 Bd Champetier de Ribes, 64000 Pau",
+    "telephone": "0647529046",
+    "email": "",
+    "horaires": {
+      "jeudi": "09:00–22:00",
+      "lundi": "",
+      "mardi": "09:00–15:00",
+      "samedi": "09:00–22:00",
+      "dimanche": "09:00–15:00",
+      "mercredi": "09:00–15:00",
+      "vendredi": "09:00–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.3046309,
+      "lng": -0.3813063
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T09:39:49.933351+00:00"
+  },
+  {
+    "id": 18,
+    "nom": "7&7 Restaurant",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "5 Rue Nogué, 64000 Pau",
+    "telephone": "0524893083",
+    "email": "",
+    "horaires": {
+      "jeudi": "10:00–14:30 / 17:30–21:30",
+      "lundi": "9:00–14:00 / 17:00–21:00",
+      "mardi": "10:00–14:30 / 17:30–21:30",
+      "samedi": "9:00–14:00",
+      "dimanche": "Fermé",
+      "mercredi": "10:00–14:30 / 17:30–21:30",
+      "vendredi": "9:00–14:00 / 17:00–21:00"
+    },
+    "coordonnees": {
+      "lat": 43.2996351,
+      "lng": -0.3748029
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T09:45:17.954197+00:00"
+  },
+  {
+    "id": 19,
+    "nom": "La Dolce Italia",
+    "secteur": "Restaurant",
+    "description": "Restaurant italien",
+    "adresse": "3 Rue du Hedas, 64000 Pau",
+    "telephone": "0954717394",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–13:30 / 19:00–22:00",
+      "lundi": "Fermé",
+      "mardi": "19:00–22:00",
+      "samedi": "12:00–13:30 / 19:00–22:00",
+      "dimanche": "12:00–14:00",
+      "mercredi": "12:00–13:30 / 19:00–22:00",
+      "vendredi": "12:00–13:30 / 19:00–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.2963208,
+      "lng": -0.3769033
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T09:47:57.63046+00:00"
+  },
+  {
+    "id": 9,
+    "nom": "On EGIN !",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "4 Rue Sully, 64000 Pau",
+    "telephone": "0559272539",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–13:30  /  19:00–21:30",
+      "lundi": "Fermé",
+      "mardi": "Fermé",
+      "samedi": "12:00–13:30  /  19:00–21:30",
+      "dimanche": "Fermé",
+      "mercredi": "12:00–13:30  /  19:00–21:30",
+      "vendredi": "12:00–13:30  /  19:00–21:30"
+    },
+    "coordonnees": {
+      "lat": 43.298802,
+      "lng": -0.3788837
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T08:58:22.922576+00:00"
+  },
+  {
+    "id": 20,
+    "nom": "Le Nolivos 2",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "18 Bd Champetier de Ribes, 64000 Pau",
+    "telephone": "",
+    "email": "",
+    "horaires": {
+      "jeudi": "",
+      "lundi": "",
+      "mardi": "",
+      "samedi": "",
+      "dimanche": "",
+      "mercredi": "",
+      "vendredi": ""
+    },
+    "coordonnees": {
+      "lat": 43.302254,
+      "lng": -0.381364
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T09:50:33.893428+00:00"
+  },
+  {
+    "id": 21,
+    "nom": "Rôtisserie Haute-Plante",
+    "secteur": "Restaurant",
+    "description": "Poulets Rôtis - Pièces de porc rôties",
+    "adresse": "10, Rue de Liège, Pl. de Verdun, 64000 Pau",
+    "telephone": "0559027320",
+    "email": "",
+    "horaires": {
+      "jeudi": "08:00–13:30 / 16:30–19:30",
+      "lundi": "Fermé",
+      "mardi": "08:00–13:30 / 16:30–19:30",
+      "samedi": "08:00–13:30 / 16:30–19:30",
+      "dimanche": "08:00–14:00",
+      "mercredi": "08:00–13:30 / 16:30–19:30",
+      "vendredi": "08:00–13:30 / 16:30–19:30"
+    },
+    "coordonnees": {
+      "lat": 43.298802,
+      "lng": -0.3788837
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T09:54:46.489721+00:00"
+  },
+  {
+    "id": 22,
+    "nom": "Le Mille Pattes",
+    "secteur": "Épicerie",
+    "description": "Alimentation générale ",
+    "adresse": "49 Rue Montpensier, 64000 Pau",
+    "telephone": "0564645973",
+    "email": "",
+    "horaires": {
+      "jeudi": "10:00–02:00",
+      "lundi": "10:00–01:00",
+      "mardi": "10:00–01:00",
+      "samedi": "10:00–02:00",
+      "dimanche": "10:00–01:00",
+      "mercredi": "10:00–01:00",
+      "vendredi": "10:00–02:00"
+    },
+    "coordonnees": {
+      "lat": 43.298802,
+      "lng": -0.3788837
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T10:01:05.849087+00:00"
+  },
+  {
+    "id": 23,
+    "nom": "Comptoir des Pyrénées",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "4 Rue Gachet, 64000 Pau",
+    "telephone": "0612152590",
+    "email": "",
+    "horaires": {
+      "jeudi": "11:00–14:00 / 18:30–02:00",
+      "lundi": "Fermé",
+      "mardi": "11:00–14:00 / 18:30–02:00",
+      "samedi": "11:00–14:00 / 18:30–02:00",
+      "dimanche": "Fermé",
+      "mercredi": "11:00–14:00 / 18:30–02:00",
+      "vendredi": "11:00–14:00 / 18:30–02:00"
+    },
+    "coordonnees": {
+      "lat": 43.2946433,
+      "lng": -0.3717641
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T22:35:24.748571+00:00"
+  },
+  {
+    "id": 24,
+    "nom": "Le Bombay",
+    "secteur": "Restaurant",
+    "description": "Restaurant Tandoori",
+    "adresse": "5 Rue d'Etigny, 64000 Pau",
+    "telephone": "0559802823",
+    "email": "",
+    "horaires": {
+      "jeudi": "19:00–22:00",
+      "lundi": "Fermé",
+      "mardi": "19:00–22:00",
+      "samedi": "19:00–22:00",
+      "dimanche": "Fermé",
+      "mercredi": "19:00–22:00",
+      "vendredi": "19:00–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.2962102,
+      "lng": -0.3803532
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T22:37:44.082358+00:00"
+  },
+  {
+    "id": 25,
+    "nom": "Les Papilles Insolites",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "5 Rue Alexander Taylor, 64000 Pau",
+    "telephone": "0559714379",
+    "email": "",
+    "horaires": {
+      "jeudi": "15:00–23:00",
+      "lundi": "Fermé",
+      "mardi": "Fermé",
+      "samedi": "11:00–23:00",
+      "dimanche": "Fermé",
+      "mercredi": "15:00–23:00",
+      "vendredi": "11:00–23:00"
+    },
+    "coordonnees": {
+      "lat": 43.2977186,
+      "lng": -0.3725134
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T22:40:26.232998+00:00"
+  },
+  {
+    "id": 26,
+    "nom": "La Dolce Italia",
+    "secteur": "Restaurant",
+    "description": "Restaurant italien",
+    "adresse": "3 Rue du Hedas, 64000 Pau",
+    "telephone": "0954717394",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–13:30 / 19:00–22:00",
+      "lundi": "Fermé",
+      "mardi": "19:00–22:00",
+      "samedi": "12:00–13:30 / 19:00–22:00",
+      "dimanche": "12:00–14:00 ",
+      "mercredi": "12:00–13:30 / 19:00–22:00",
+      "vendredi": "12:00–13:30 / 19:00–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.2939265,
+      "lng": -0.3800677
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T22:44:22.946694+00:00"
+  },
+  {
+    "id": 27,
+    "nom": "Ayaa",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "36 Rue Maréchal Joffre, 64000 Pau",
+    "telephone": "0749147780",
+    "email": "",
+    "horaires": {
+      "jeudi": "11:30–23:00",
+      "lundi": "11:30–23:00",
+      "mardi": "11:30–23:00",
+      "samedi": "11:30–23:00",
+      "dimanche": "11:30–23:00",
+      "mercredi": "11:30–23:00",
+      "vendredi": "11:30–23:00"
+    },
+    "coordonnees": {
+      "lat": 43.2936064,
+      "lng": -0.3762804
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T22:47:08.044833+00:00"
+  },
+  {
+    "id": 28,
+    "nom": "Restaurant O'Gascon",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "13 Rue du Château, 64000 Pau",
+    "telephone": "0559815178",
+    "email": "",
+    "horaires": {
+      "jeudi": "11:00–22:00",
+      "lundi": "Fermé",
+      "mardi": "11:00–22:00",
+      "samedi": "11:00–22:00",
+      "dimanche": "12:00–15:30",
+      "mercredi": "12:00–15:30",
+      "vendredi": "11:00–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.2952194,
+      "lng": -0.3784244
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T22:50:51.111833+00:00"
+  },
+  {
+    "id": 29,
+    "nom": "Coco Viet ",
+    "secteur": "Restaurant",
+    "description": "Restaurant vietnamien",
+    "adresse": "19 Rue du 14 Juillet, 64000 Pau",
+    "telephone": "0559718266",
+    "email": "",
+    "horaires": {
+      "jeudi": "19:00–22:30",
+      "lundi": "Fermé",
+      "mardi": "Fermé",
+      "samedi": "19:00–22:30",
+      "dimanche": "Fermé",
+      "mercredi": "Fermé",
+      "vendredi": "19:00–22:30"
+    },
+    "coordonnees": {
+      "lat": 43.2917882,
+      "lng": -0.3827184
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T22:52:57.700863+00:00"
+  },
+  {
+    "id": 30,
+    "nom": "Casa Dudul",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "Pl. Reine Marguerite, 64000 Pau",
+    "telephone": "0559134928",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–15:00 / 18:00–21:30",
+      "lundi": "12:00–15:00",
+      "mardi": "12:00–15:00 / 18:00–21:30",
+      "samedi": "12:00–15:00 / 18:00–21:30",
+      "dimanche": "12:00–16:00",
+      "mercredi": "12:00–15:00 / 18:00–21:30",
+      "vendredi": "12:00–15:00 / 18:00–21:30"
+    },
+    "coordonnees": {
+      "lat": 43.2967065,
+      "lng": -0.3938435
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T22:55:19.829371+00:00"
+  },
+  {
+    "id": 31,
+    "nom": "Au Grain de Raisin",
+    "secteur": "Restaurant",
+    "description": "Bar à vin",
+    "adresse": "11 Rue Sully, 64000 Pau",
+    "telephone": "0674399636",
+    "email": "",
+    "horaires": {
+      "jeudi": "17:00–00:00",
+      "lundi": "Fermé",
+      "mardi": "17:00–00:00",
+      "samedi": "17:00–00:00",
+      "dimanche": "Fermé",
+      "mercredi": "17:00–00:00",
+      "vendredi": "17:00–00:00"
+    },
+    "coordonnees": {
+      "lat": 43.2949998,
+      "lng": -0.3782116
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T22:57:55.381813+00:00"
+  },
+  {
+    "id": 32,
+    "nom": "La Craft-Pyrénées",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "8 Pl. Gramont, 64000 Pau",
+    "telephone": "0547416570",
+    "email": "",
+    "horaires": {
+      "jeudi": "16:00–00:00",
+      "lundi": "Fermé",
+      "mardi": "16:00–23:00",
+      "samedi": "16:00–00:00",
+      "dimanche": "Fermé",
+      "mercredi": "16:00–23:00",
+      "vendredi": "16:00–00:00"
+    },
+    "coordonnees": {
+      "lat": 43.2967418,
+      "lng": -0.3792496
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T23:03:23.349276+00:00"
+  },
+  {
+    "id": 33,
+    "nom": "Café du passage",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "5 Pl. Reine Marguerite, 64000 Pau",
+    "telephone": "0559062917",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–14:00 / 18:30–22:00",
+      "lundi": "12:00–14:00 / 18:30–22:00",
+      "mardi": "12:00–14:00 / 18:30–22:00",
+      "samedi": "12:00–14:00 / 18:30–22:00",
+      "dimanche": "Fermé",
+      "mercredi": "12:00–14:00 / 18:30–22:00",
+      "vendredi": "12:00–14:00 / 18:30–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.2936064,
+      "lng": -0.3762804
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T23:05:48.180876+00:00"
+  },
+  {
+    "id": 34,
+    "nom": "La Craft-Pyrénées",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "8 Pl. Gramont, 64000 Pau",
+    "telephone": "0547416570",
+    "email": "",
+    "horaires": {
+      "jeudi": "16:00–00:00",
+      "lundi": "Fermé",
+      "mardi": "16:00–00:00",
+      "samedi": "16:00–00:00",
+      "dimanche": "Fermé",
+      "mercredi": "16:00–00:00",
+      "vendredi": "16:00–00:00"
+    },
+    "coordonnees": {
+      "lat": 43.2967418,
+      "lng": -0.3792496
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T23:10:19.58155+00:00"
+  },
+  {
+    "id": 35,
+    "nom": "No 5 Bar",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "46 Rue Maréchal Joffre, 64000 Pau",
+    "telephone": "",
+    "email": "",
+    "horaires": {
+      "jeudi": "18:30–01:30",
+      "lundi": "Fermé",
+      "mardi": "18:30–01:30",
+      "samedi": "18:30–01:30",
+      "dimanche": "Fermé",
+      "mercredi": "18:30–01:30",
+      "vendredi": "18:30–01:30"
+    },
+    "coordonnees": {
+      "lat": 43.2956503,
+      "lng": -0.3742285
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T23:13:29.733626+00:00"
+  },
+  {
+    "id": 36,
+    "nom": "Café du Palais",
+    "secteur": "Restaurant",
+    "description": "Brasserie",
+    "adresse": "7 Rue Saint-Jacques, 64000 Pau",
+    "telephone": "0981068991",
+    "email": "",
+    "horaires": {
+      "jeudi": "08:00–19:00",
+      "lundi": "08:00–19:00",
+      "mardi": "08:00–19:00",
+      "samedi": "09:00–19:00",
+      "dimanche": "Fermé",
+      "mercredi": "08:00–19:00",
+      "vendredi": "08:00–19:00"
+    },
+    "coordonnees": {
+      "lat": 43.2979474,
+      "lng": -0.375162
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T23:17:40.931079+00:00"
+  },
+  {
+    "id": 37,
+    "nom": "Le Saint Estèphe",
+    "secteur": "Restaurant",
+    "description": "Brasserie",
+    "adresse": "26 Rue de Liège, 64000 Pau",
+    "telephone": "0559984337",
+    "email": "",
+    "horaires": {
+      "jeudi": "07:00–22:30",
+      "lundi": "07:00–22:30",
+      "mardi": "07:00–22:30",
+      "samedi": "07:00–22:30",
+      "dimanche": "Fermé",
+      "mercredi": "07:00–22:30",
+      "vendredi": "07:00–22:30"
+    },
+    "coordonnees": {
+      "lat": 43.2984028,
+      "lng": -0.3790437
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T23:20:27.475066+00:00"
+  },
+  {
+    "id": 38,
+    "nom": "Crêperie Tandem",
+    "secteur": "Crêpier",
+    "description": "",
+    "adresse": "6 Rue Jeanne d'Albret, 64000 Pau",
+    "telephone": "0559274441",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–13:45 / 19:00–21:00",
+      "lundi": "Fermé",
+      "mardi": "Fermé",
+      "samedi": "12:00–13:45 / 19:00–21:30",
+      "dimanche": "Fermé",
+      "mercredi": "12:00–13:45 / 19:00–21:00",
+      "vendredi": "12:00–13:45 / 19:00–21:30"
+    },
+    "coordonnees": {
+      "lat": 43.2936064,
+      "lng": -0.3762804
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T23:25:56.010388+00:00"
+  },
+  {
+    "id": 59,
+    "nom": "La Jardinière",
+    "secteur": "Restaurant",
+    "description": "Restaurant municipal",
+    "adresse": "Rue de Craonne, 64000 Pau",
+    "telephone": "0540038127",
+    "email": "",
+    "horaires": {
+      "jeudi": "11 h 30 à 13 h 30",
+      "lundi": "11 h 30 à 13 h 30",
+      "mardi": "11 h 30 à 13 h 30",
+      "samedi": "Fermé",
+      "dimanche": "Fermé",
+      "mercredi": "11 h 30 à 13 h 30",
+      "vendredi": "11 h 30 à 13 h 30"
+    },
+    "coordonnees": {
+      "lat": 43.3021118,
+      "lng": -0.3645272
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-23T06:00:18.274201+00:00"
+  },
+  {
+    "id": 39,
+    "nom": "Le Dragon Rouge",
+    "secteur": "Restaurant",
+    "description": "Restaurant chinois",
+    "adresse": "6 Rue Laclede, 64000 Pau",
+    "telephone": "0559272787",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–14:00 / 19:00–22:00",
+      "lundi": "12:00–14:00 / 19:00–22:00",
+      "mardi": "12:00–14:00 / 19:00–22:00",
+      "samedi": "12:00–14:00 / 19:00–22:00",
+      "dimanche": "Fermé",
+      "mercredi": "12:00–14:00 / 19:00–22:00",
+      "vendredi": "12:00–14:00 / 19:00–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.2972564,
+      "lng": -0.3782381
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T23:49:16.594797+00:00"
+  },
+  {
+    "id": 40,
+    "nom": "MXN &TACOS Naan Kebab",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "10 Rue Bordenave d'Abere, 64000 Pau",
+    "telephone": "0618158425",
+    "email": "",
+    "horaires": {
+      "jeudi": "11:00–15:00 / 18:00–01:00",
+      "lundi": "11:00–15:00 / 18:00–00:00",
+      "mardi": "11:00–15:00 / 18:00–00:00",
+      "samedi": "11:00–01:00",
+      "dimanche": "11:00–00:00",
+      "mercredi": "11:00–15:00 / 18:00–00:00",
+      "vendredi": "11:00–15:00 / 18:00–01:00"
+    },
+    "coordonnees": {
+      "lat": 43.296122,
+      "lng": -0.3783117
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T23:52:39.442046+00:00"
+  },
+  {
+    "id": 41,
+    "nom": "Bar à Burrata - Maison Francis Miot",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "45 Rue Maréchal Joffre, 64000 Pau",
+    "telephone": "0524360419",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–22:00",
+      "lundi": "12:00–19:00",
+      "mardi": "12:00–19:00",
+      "samedi": "12:00–22:00",
+      "dimanche": "14:00–19:00",
+      "mercredi": "12:00–19:00",
+      "vendredi": "12:00–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.2936064,
+      "lng": -0.3762804
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T23:56:29.489681+00:00"
+  },
+  {
+    "id": 42,
+    "nom": "Le Boulevard",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "18 Bd des Pyrénées, 64000 Pau",
+    "telephone": "0559805970",
+    "email": "",
+    "horaires": {
+      "jeudi": "08:00–00:00",
+      "lundi": "08:00–00:00",
+      "mardi": "08:00–00:00",
+      "samedi": "08:00–00:00",
+      "dimanche": "08:00–00:00",
+      "mercredi": "08:00–00:00",
+      "vendredi": "08:00–00:00"
+    },
+    "coordonnees": {
+      "lat": 43.2934696,
+      "lng": -0.3734132
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-18T23:58:30.966726+00:00"
+  },
+  {
+    "id": 43,
+    "nom": "Etna",
+    "secteur": "Restaurant",
+    "description": "Restaurant italien",
+    "adresse": "16 Rue du Château, 64000 Pau",
+    "telephone": "0559277794",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–14:30 / 19:00–22:00",
+      "lundi": "12:00–14:30 / 19:00–22:00",
+      "mardi": "12:00–14:30 / 19:00–22:00",
+      "samedi": "12:00–14:30 / 19:00–22:00",
+      "dimanche": "12:00–14:30 / 19:00–22:00",
+      "mercredi": "12:00–14:30 / 19:00–22:00",
+      "vendredi": "12:00–14:30 / 19:00–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.296074,
+      "lng": -0.3963644
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-19T00:00:49.687712+00:00"
+  },
+  {
+    "id": 44,
+    "nom": "Casa Iruña",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "9 Rue des Orphelines, 64000 Pau",
+    "telephone": "0634666605",
+    "email": "",
+    "horaires": {
+      "jeudi": "18:00–02:00",
+      "lundi": "Fermé",
+      "mardi": "Fermé",
+      "samedi": "18:00–02:00",
+      "dimanche": "Fermé",
+      "mercredi": "18:00–02:00",
+      "vendredi": "18:00–02:00"
+    },
+    "coordonnees": {
+      "lat": 43.2949558,
+      "lng": -0.3710949
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-19T00:04:32.482345+00:00"
+  },
+  {
+    "id": 45,
+    "nom": "Manhattan Bar",
+    "secteur": "Restaurant",
+    "description": "Bar",
+    "adresse": "5 rue sully, Quartier du chateau, 64000 Pau",
+    "telephone": "0971508885",
+    "email": "",
+    "horaires": {
+      "jeudi": "18:00–02:00",
+      "lundi": "Fermé",
+      "mardi": "18:00–01:00",
+      "samedi": "18:00–02:00",
+      "dimanche": "Fermé",
+      "mercredi": "18:00–01:00",
+      "vendredi": "18:00–02:00"
+    },
+    "coordonnees": {
+      "lat": 43.2936064,
+      "lng": -0.3762804
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-19T00:07:33.728731+00:00"
+  },
+  {
+    "id": 46,
+    "nom": "Crêperie du Château",
+    "secteur": "Crêpier",
+    "description": "",
+    "adresse": "6 Rue du Château, 64000 Pau",
+    "telephone": "0559275988",
+    "email": "",
+    "horaires": {
+      "jeudi": "11:45–22:00",
+      "lundi": "Fermé",
+      "mardi": "Fermé",
+      "samedi": "11:45–22:30",
+      "dimanche": "11:45–18:00",
+      "mercredi": "11:45–22:00",
+      "vendredi": "11:45–22:30"
+    },
+    "coordonnees": {
+      "lat": 43.2949308,
+      "lng": -0.3788815
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-19T00:10:17.846088+00:00"
+  },
+  {
+    "id": 47,
+    "nom": "Le p'tit resto",
+    "secteur": "Restaurant",
+    "description": "Restaurant asiatique",
+    "adresse": "7 Rue Bordenave d'Abere, 64000 Pau",
+    "telephone": "",
+    "email": "",
+    "horaires": {
+      "jeudi": "",
+      "lundi": "",
+      "mardi": "",
+      "samedi": "",
+      "dimanche": "",
+      "mercredi": "",
+      "vendredi": ""
+    },
+    "coordonnees": {
+      "lat": 43.2959789,
+      "lng": -0.3786472
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-19T00:12:25.837842+00:00"
+  },
+  {
+    "id": 48,
+    "nom": "Little mama",
+    "secteur": "Restaurant",
+    "description": "Restaurant italien",
+    "adresse": "13 Rue Maréchal Joffre, 64000 Pau",
+    "telephone": "0559602692",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–14:00 / 19:30–22:00",
+      "lundi": "Fermé",
+      "mardi": "12:00–14:00 / 19:30–22:00",
+      "samedi": "12:00–14:00 / 19:30–22:00",
+      "dimanche": "Fermé",
+      "mercredi": "12:00–14:00 / 19:30–22:00",
+      "vendredi": "12:00–14:00 / 19:30–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.2933486,
+      "lng": -0.372292
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-20T04:57:46.593958+00:00"
+  },
+  {
+    "id": 49,
+    "nom": "Ys",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "Résidence Les Portiques, 20 Bd des Pyrénées, 64000 Pau",
+    "telephone": "0524366667",
+    "email": "",
+    "horaires": {
+      "jeudi": "",
+      "lundi": "",
+      "mardi": "",
+      "samedi": "",
+      "dimanche": "",
+      "mercredi": "",
+      "vendredi": ""
+    },
+    "coordonnees": {
+      "lat": 43.2939772,
+      "lng": -0.3722061
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-20T05:26:47.933341+00:00"
+  },
+  {
+    "id": 50,
+    "nom": "Le Cristal",
+    "secteur": "Restaurant",
+    "description": "Brasserie",
+    "adresse": "20 Rue Maréchal Foch, 64000 Pau",
+    "telephone": "0559276108",
+    "email": "",
+    "horaires": {
+      "jeudi": "07:00–19:30",
+      "lundi": "07:00–19:30",
+      "mardi": "07:00–19:30",
+      "samedi": "07:00–19:30",
+      "dimanche": "Fermé",
+      "mercredi": "07:00–19:30",
+      "vendredi": "07:00–19:30"
+    },
+    "coordonnees": {
+      "lat": 43.296628,
+      "lng": -0.3699647
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-20T05:53:43.590585+00:00"
+  },
+  {
+    "id": 51,
+    "nom": "Aux délices de Marie",
+    "secteur": "Crêpier",
+    "description": "Crêperie",
+    "adresse": "1 Square George V, 64000 Pau",
+    "telephone": "0559271750",
+    "email": "",
+    "horaires": {
+      "jeudi": "11:00–18:00",
+      "lundi": "Fermé",
+      "mardi": "11:00–18:00",
+      "samedi": "11:00–18:00",
+      "dimanche": "11:00–18:00",
+      "mercredi": "11:00–18:00",
+      "vendredi": "11:00–18:00"
+    },
+    "coordonnees": {
+      "lat": 43.2943321,
+      "lng": -0.3708168
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-20T06:03:51.889622+00:00"
+  },
+  {
+    "id": 52,
+    "nom": "Chez Zoé",
+    "secteur": "Restaurant",
+    "description": "Restaurant chinois",
+    "adresse": "14 Rue Samonzet, 64000 Pau",
+    "telephone": "0524365658",
+    "email": "",
+    "horaires": {
+      "jeudi": "11:30–21:30",
+      "lundi": "11:30–21:30",
+      "mardi": "11:30–21:30",
+      "samedi": "11:30–21:30",
+      "dimanche": "Fermé",
+      "mercredi": "11:30–21:30",
+      "vendredi": "11:30–21:30"
+    },
+    "coordonnees": {
+      "lat": 43.2979762,
+      "lng": -0.3695184
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-20T06:10:24.29873+00:00"
+  },
+  {
+    "id": 53,
+    "nom": "Le Champagne",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "5 Pl. Royale, 64000 Pau",
+    "telephone": "0559277212",
+    "email": "",
+    "horaires": {
+      "jeudi": "",
+      "lundi": "",
+      "mardi": "",
+      "samedi": "",
+      "dimanche": "",
+      "mercredi": "",
+      "vendredi": ""
+    },
+    "coordonnees": {
+      "lat": 43.2939772,
+      "lng": -0.372206
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-20T06:12:52.461166+00:00"
+  },
+  {
+    "id": 54,
+    "nom": "Petit Liban",
+    "secteur": "Restaurant",
+    "description": "Restaurant libanais",
+    "adresse": "7 Rue de Foix, 64000 Pau",
+    "telephone": "",
+    "email": "",
+    "horaires": {
+      "jeudi": "",
+      "lundi": "",
+      "mardi": "",
+      "samedi": "",
+      "dimanche": "",
+      "mercredi": "",
+      "vendredi": ""
+    },
+    "coordonnees": {
+      "lat": 43.2948963,
+      "lng": -0.3743682
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-20T06:16:45.285018+00:00"
+  },
+  {
+    "id": 55,
+    "nom": "La rôtisserie pau",
+    "secteur": "Restaurant",
+    "description": "Restaurant de grillades",
+    "adresse": "64000 Pau",
+    "telephone": "",
+    "email": "",
+    "horaires": {
+      "jeudi": "",
+      "lundi": "",
+      "mardi": "",
+      "samedi": "",
+      "dimanche": "",
+      "mercredi": "",
+      "vendredi": ""
+    },
+    "coordonnees": {
+      "lat": 43.2939772,
+      "lng": -0.3722061
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-20T06:18:52.179173+00:00"
+  },
+  {
+    "id": 56,
+    "nom": "Sancho Panza",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "38 Rue Castetnau, 64000 Pau",
+    "telephone": "0626444012",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–13:30 19:30–21:30",
+      "lundi": "Fermé",
+      "mardi": "12:00–13:30",
+      "samedi": "19:30–21:30",
+      "dimanche": "Fermé",
+      "mercredi": "12:00–13:30",
+      "vendredi": "12:00–13:30 19:30–21:30"
+    },
+    "coordonnees": {
+      "lat": 43.3005944,
+      "lng": -0.3726027
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-23T05:45:00.479431+00:00"
+  },
+  {
+    "id": 57,
+    "nom": "Smash And Dog",
+    "secteur": "Restaurant",
+    "description": "Restauration rapide",
+    "adresse": "1 Bis Rue Emile Garet, 64000 Pau",
+    "telephone": "0559056021",
+    "email": "",
+    "horaires": {
+      "jeudi": "11:30–14:00 / 18:30–23:00",
+      "lundi": "11:30–14:00 / 18:30–23:00",
+      "mardi": "11:30–14:00 / 18:30–23:00",
+      "samedi": "18:30–00:00",
+      "dimanche": "18:30–23:00",
+      "mercredi": "11:30–14:00 / 18:30–23:00",
+      "vendredi": "11:30–14:00 / 18:30–00:00"
+    },
+    "coordonnees": {
+      "lat": 43.301976,
+      "lng": -0.3626797
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-23T05:49:54.914911+00:00"
+  },
+  {
+    "id": 58,
+    "nom": "THE KING",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "56 Rue Castetnau, 64000 Pau",
+    "telephone": "0638217490",
+    "email": "",
+    "horaires": {
+      "jeudi": "11:00–01:00",
+      "lundi": "11:00–00:00",
+      "mardi": "11:00–00:00",
+      "samedi": "11:00–01:00",
+      "dimanche": "Fermé",
+      "mercredi": "11:00–00:00",
+      "vendredi": "11:00–01:00"
+    },
+    "coordonnees": {
+      "lat": 43.3004408,
+      "lng": -0.3754576
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-23T05:52:46.793794+00:00"
+  },
+  {
+    "id": 60,
+    "nom": "La Taberna",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "6 Rue Castetnau, 64000 Pau",
+    "telephone": "0559139177",
+    "email": "",
+    "horaires": {
+      "jeudi": "08:00–02:00",
+      "lundi": "08:00–02:00",
+      "mardi": "08:00–02:00",
+      "samedi": "08:00–02:00",
+      "dimanche": "Fermé",
+      "mercredi": "08:00–02:00",
+      "vendredi": "08:00–02:00"
+    },
+    "coordonnees": {
+      "lat": 43.3005944,
+      "lng": -0.363848
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-23T06:18:14.567016+00:00"
+  },
+  {
+    "id": 61,
+    "nom": "BELDI'Z",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "1 Av. du Loup, 64000 Pau",
+    "telephone": "0559123098",
+    "email": "",
+    "horaires": {
+      "jeudi": "21:00–01:00",
+      "lundi": "Fermé",
+      "mardi": "21:00–01:00",
+      "samedi": "21:00–01:00",
+      "dimanche": "21:00–01:00",
+      "mercredi": "21:00–01:00",
+      "vendredi": "21:00–01:00"
+    },
+    "coordonnees": {
+      "lat": 43.3038364,
+      "lng": -0.3594421
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-23T06:20:33.888977+00:00"
+  },
+  {
+    "id": 62,
+    "nom": "Hong Chang",
+    "secteur": "Restaurant",
+    "description": "Restaurant chinois",
+    "adresse": "2 bis Pl. du Foirail, 64000 Pau",
+    "telephone": "0559302520",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–14:00 / 19:00–22:30",
+      "lundi": "Fermé",
+      "mardi": "Fermé",
+      "samedi": "12:00–14:00 / 19:00–22:30",
+      "dimanche": "12:00–14:00 / 19:00–22:30",
+      "mercredi": "19:00–22:30",
+      "vendredi": "12:00–14:00 / 19:00–22:30"
+    },
+    "coordonnees": {
+      "lat": 43.3029691,
+      "lng": -0.3713785
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-23T06:23:47.688214+00:00"
+  },
+  {
+    "id": 63,
+    "nom": "Africainefood64",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "6 Rue Lespy, 64000 Pau",
+    "telephone": "0637221496",
+    "email": "",
+    "horaires": {
+      "jeudi": "11:30–15:00 / 18:00–22:00",
+      "lundi": "Fermé",
+      "mardi": "11:30–15:00 / 18:00–22:00",
+      "samedi": "11:30–15:00 / 18:00–22:00",
+      "dimanche": "17:00–22:00",
+      "mercredi": "11:30–15:00 / 18:00–22:00",
+      "vendredi": "11:30–15:00 / 18:00–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.3009614,
+      "lng": -0.3704184
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-23T06:40:58.156757+00:00"
+  },
+  {
+    "id": 64,
+    "nom": "La petite brasserie",
+    "secteur": "Restaurant",
+    "description": "Brasserie",
+    "adresse": "79 Rue Castetnau, 64000 Pau",
+    "telephone": "0559278139",
+    "email": "",
+    "horaires": {
+      "jeudi": "08:00–19:00",
+      "lundi": "08:00–19:00",
+      "mardi": "Fermé",
+      "samedi": "09:00–12:30 / 15:00–19:00",
+      "dimanche": "10:00–16:00",
+      "mercredi": "08:00–19:00",
+      "vendredi": "08:00–19:00"
+    },
+    "coordonnees": {
+      "lat": 43.3002367,
+      "lng": -0.3681079
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-23T06:56:09.766682+00:00"
+  },
+  {
+    "id": 65,
+    "nom": "Chez Laurette",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "12 Pl. du Foirail, 64000 Pau",
+    "telephone": "0559149392",
+    "email": "",
+    "horaires": {
+      "jeudi": "09:30–23:30",
+      "lundi": "Fermé",
+      "mardi": "09:30–23:30",
+      "samedi": "09:30–23:30",
+      "dimanche": "Fermé",
+      "mercredi": "09:30–23:30",
+      "vendredi": "09:30–23:30"
+    },
+    "coordonnees": {
+      "lat": 43.3042212,
+      "lng": -0.3736389
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-23T07:00:59.22672+00:00"
+  },
+  {
+    "id": 66,
+    "nom": "OKOU",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "62 Rue Emile Garet, 64000 Pau",
+    "telephone": "",
+    "email": "",
+    "horaires": {
+      "jeudi": "",
+      "lundi": "",
+      "mardi": "",
+      "samedi": "",
+      "dimanche": "",
+      "mercredi": "",
+      "vendredi": ""
+    },
+    "coordonnees": {
+      "lat": 43.2994857,
+      "lng": -0.365473
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-23T07:04:27.706545+00:00"
+  },
+  {
+    "id": 67,
+    "nom": "Mama Resto",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "Rue Lespy 64000 Pau",
+    "telephone": "0950606876",
+    "email": "",
+    "horaires": {
+      "jeudi": "11:30–02:00",
+      "lundi": "11:30–02:00",
+      "mardi": "11:30–02:00",
+      "samedi": "11:30–02:00",
+      "dimanche": "11:30–02:00",
+      "mercredi": "11:30–02:00",
+      "vendredi": "11:30–02:00"
+    },
+    "coordonnees": {
+      "lat": 43.2994805,
+      "lng": -0.3657244
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-23T08:29:51.8082+00:00"
+  },
+  {
+    "id": 68,
+    "nom": "Le Phnom Penh",
+    "secteur": "Restaurant",
+    "description": "Restaurant cambodgien",
+    "adresse": "18 Rue Montpensier, 64000 Pau",
+    "telephone": "0559278501",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–13:30 / 19:00–22:00",
+      "lundi": "12:00–13:30 / 19:00–22:00",
+      "mardi": "12:00–13:30 / 19:00–22:00",
+      "samedi": "12:00–13:30 / 19:00–22:00",
+      "dimanche": "Fermé",
+      "mercredi": "Fermé",
+      "vendredi": "12:00–13:30 / 19:00–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.2996024,
+      "lng": -0.3720622
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-26T13:29:50.244867+00:00"
+  },
+  {
+    "id": 69,
+    "nom": "Ayaa pau",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "36 Rue Maréchal Joffre, 64000 Pau",
+    "telephone": "0749147780",
+    "email": "",
+    "horaires": {
+      "jeudi": "11:30–23:00",
+      "lundi": "11:30–23:00",
+      "mardi": "11:30–23:00",
+      "samedi": "11:30–23:00",
+      "dimanche": "11:30–23:00",
+      "mercredi": "11:30–23:00",
+      "vendredi": "11:30–23:00"
+    },
+    "coordonnees": {
+      "lat": 43.2955321,
+      "lng": -0.3747833
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-26T13:42:37.933036+00:00"
+  },
+  {
+    "id": 70,
+    "nom": "Nativ",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "29 Rue Maréchal Joffre, 64000 Pau",
+    "telephone": "",
+    "email": "",
+    "horaires": {
+      "jeudi": "09:30–17:30",
+      "lundi": "Fermé",
+      "mardi": "09:30–17:00",
+      "samedi": "09:30–17:30",
+      "dimanche": "Fermé",
+      "mercredi": "09:30–17:30",
+      "vendredi": "09:30–17:30"
+    },
+    "coordonnees": {
+      "lat": 43.2954797,
+      "lng": -0.3739125
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-26T13:45:55.121979+00:00"
+  },
+  {
+    "id": 71,
+    "nom": "Chez Refik",
+    "secteur": "Restaurant",
+    "description": "Kebab",
+    "adresse": "14 Rue Tran, 64000 Pau",
+    "telephone": "",
+    "email": "",
+    "horaires": {
+      "jeudi": "19:00–22:00",
+      "lundi": "Fermé",
+      "mardi": "Fermé",
+      "samedi": "19:00–22:00",
+      "dimanche": "Fermé",
+      "mercredi": "19:00–22:00",
+      "vendredi": "19:00–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.2972127,
+      "lng": -0.3751343
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-26T13:50:31.828924+00:00"
+  },
+  {
+    "id": 72,
+    "nom": "Kmk Food",
+    "secteur": "Restaurant",
+    "description": "Restaurant halal",
+    "adresse": "11 Rue Alexander Taylor, 64000 Pau",
+    "telephone": "0524984802",
+    "email": "",
+    "horaires": {
+      "jeudi": "11:30–23:00",
+      "lundi": "11:30–23:00",
+      "mardi": "11:30–23:00",
+      "samedi": "11:30–23:00",
+      "dimanche": "11:30–23:00",
+      "mercredi": "11:30–23:00",
+      "vendredi": "11:30–23:00"
+    },
+    "coordonnees": {
+      "lat": 43.2961035,
+      "lng": -0.3708684
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-26T14:01:10.341411+00:00"
+  },
+  {
+    "id": 73,
+    "nom": "La Coupole",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "1 Rue Bordenave d'Abere, 64000 Pau",
+    "telephone": "0559604688",
+    "email": "",
+    "horaires": {
+      "jeudi": "08:00–20:00",
+      "lundi": "Fermé",
+      "mardi": "08:00–20:00",
+      "samedi": "08:00–20:00",
+      "dimanche": "08:00–20:00",
+      "mercredi": "08:00–20:00",
+      "vendredi": "08:00–20:00"
+    },
+    "coordonnees": {
+      "lat": 43.295278,
+      "lng": -0.3761395
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-03-26T14:08:00.281264+00:00"
+  },
+  {
+    "id": 74,
+    "nom": "Fait maison snack",
+    "secteur": "Restaurant",
+    "description": "snack",
+    "adresse": "1 Rue des Tamaris, 64230 Lescar",
+    "telephone": "0559304140",
+    "email": "",
+    "horaires": {
+      "jeudi": "07:00–14:30",
+      "lundi": "07:00–14:30",
+      "mardi": "07:00–14:30",
+      "samedi": "11:00–14:00",
+      "dimanche": "Fermé",
+      "mercredi": "07:00–14:30",
+      "vendredi": "07:00–14:30"
+    },
+    "coordonnees": {
+      "lat": 43.3348882,
+      "lng": -0.4659829
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-04-03T08:16:57.526539+00:00"
+  },
+  {
+    "id": 75,
+    "nom": "New Red Lion",
+    "secteur": "Restaurant",
+    "description": "Bar à bières",
+    "adresse": "8 Rue Lapouble, 64000 Pau",
+    "telephone": "0559625104",
+    "email": "",
+    "horaires": {
+      "jeudi": "17:00–02:00",
+      "lundi": "Fermé",
+      "mardi": "17:00–02:00",
+      "samedi": "17:00–02:00",
+      "dimanche": "Fermé",
+      "mercredi": "17:00–02:00",
+      "vendredi": "17:00–02:00"
+    },
+    "coordonnees": {
+      "lat": 43.3079781,
+      "lng": -0.4004994
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-04-03T09:15:24.949066+00:00"
+  },
+  {
+    "id": 76,
+    "nom": "Mitaka",
+    "secteur": "Restaurant",
+    "description": "Restaurant de type buffet",
+    "adresse": "2 Bd Charles de Gaulle, 64140 Lons",
+    "telephone": "0559051959",
+    "email": "",
+    "horaires": {
+      "jeudi": "12:00–14:30 / 19:00–22:30",
+      "lundi": "Fermé",
+      "mardi": "12:00–14:30 / 19:00–22:30",
+      "samedi": "12:00–14:30 / 19:00–22:30",
+      "dimanche": "12:00–14:30 / 19:00–22:30",
+      "mercredi": "12:00–14:30 / 19:00–22:30",
+      "vendredi": "12:00–14:30 / 19:00–22:30"
+    },
+    "coordonnees": {
+      "lat": 43.3069788,
+      "lng": -0.4096833
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-04-03T09:17:28.688754+00:00"
+  },
+  {
+    "id": 77,
+    "nom": "Ferreirinha Guedes Agostinho",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "43 Bd Charles de Gaulle, 64140 Lons",
+    "telephone": "0559920531",
+    "email": "",
+    "horaires": {
+      "jeudi": "",
+      "lundi": "",
+      "mardi": "",
+      "samedi": "",
+      "dimanche": "",
+      "mercredi": "",
+      "vendredi": ""
+    },
+    "coordonnees": {
+      "lat": 43.3085256,
+      "lng": -0.4169923
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-04-03T09:19:47.177637+00:00"
+  },
+  {
+    "id": 78,
+    "nom": "Aux Délices du Golf",
+    "secteur": "Boulangerie",
+    "description": "",
+    "adresse": "36 Rte de Bayonne, 64140 Billère",
+    "telephone": "0771363709",
+    "email": "",
+    "horaires": {
+      "jeudi": "06:30–13:30 / 15:30–19:30",
+      "lundi": "07:00–13:30",
+      "mardi": "06:30–13:30 / 15:30–19:30",
+      "samedi": "07:00–13:30 / 15:30–19:30",
+      "dimanche": "07:00–13:30",
+      "mercredi": "Fermé",
+      "vendredi": "06:30–13:30 / 15:30–19:30"
+    },
+    "coordonnees": {
+      "lat": 43.2996756,
+      "lng": -0.4000944
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-04-03T09:23:53.603623+00:00"
+  },
+  {
+    "id": 79,
+    "nom": "Gaston's Lescar",
+    "secteur": "Boulangerie",
+    "description": "",
+    "adresse": "6 Rue Séverin Lacoste, 64230 Lescar",
+    "telephone": "0559838108",
+    "email": "",
+    "horaires": {
+      "jeudi": "07:00–19:00",
+      "lundi": "07:00–19:00",
+      "mardi": "07:00–19:00",
+      "samedi": "07:00–13:30",
+      "dimanche": "Fermé",
+      "mercredi": "07:00–19:00",
+      "vendredi": "07:00–19:00"
+    },
+    "coordonnees": {
+      "lat": 43.3352315,
+      "lng": -0.434656
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-04-03T09:28:43.566452+00:00"
+  },
+  {
+    "id": 80,
+    "nom": "Brasserie la Comédie",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "1 Av. du Moulin, 64140 Lons",
+    "telephone": "",
+    "email": "",
+    "horaires": {
+      "jeudi": "06:30–20:00",
+      "lundi": "06:30–20:00",
+      "mardi": "06:30–20:00",
+      "samedi": "06:30–20:00",
+      "dimanche": "08:00–14:00",
+      "mercredi": "06:30–20:00",
+      "vendredi": "06:30–20:00"
+    },
+    "coordonnees": {
+      "lat": 43.3242255,
+      "lng": -0.4068241
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-04-03T09:31:53.999411+00:00"
+  },
+  {
+    "id": 81,
+    "nom": "Paradise beauty",
+    "secteur": "Esthéticien cosméticien",
+    "description": "Esthéticien",
+    "adresse": "14 Rue de Sienne, 64140 Lons",
+    "telephone": "0752869304",
+    "email": "",
+    "horaires": {
+      "jeudi": "09:00–20:00",
+      "lundi": "09:00–20:00",
+      "mardi": "09:00–20:00",
+      "samedi": "10:00–20:00",
+      "dimanche": "11:00–19:00",
+      "mercredi": "10:00–20:00",
+      "vendredi": "15:30–20:00"
+    },
+    "coordonnees": {
+      "lat": 43.3203804,
+      "lng": -0.4054333
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-04-03T09:35:21.62757+00:00"
+  },
+  {
+    "id": 83,
+    "nom": "𝗕𝗶𝗮𝘀𝗼𝗻",
+    "secteur": "Menuiserie",
+    "description": "",
+    "adresse": "32 Rue Charles Tellier, 64140 Lons",
+    "telephone": "0559339809",
+    "email": "",
+    "horaires": {
+      "jeudi": "08:00–12:30 / 14:00–19:00",
+      "lundi": "08:00–12:30 / 14:00–19:00",
+      "mardi": "08:00–12:30 / 14:00–19:00",
+      "samedi": "10:00–13:00 / 14:00–18:00",
+      "dimanche": "Fermé",
+      "mercredi": "08:00–12:30 / 14:00–19:00",
+      "vendredi": "08:00–12:30 / 14:00–19:00"
+    },
+    "coordonnees": {
+      "lat": 43.3406207,
+      "lng": -0.3902413
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-04-03T09:44:16.419425+00:00"
+  },
+  {
+    "id": 84,
+    "nom": "BLEAU-VERDIER Nathalie",
+    "secteur": "Podologue",
+    "description": "",
+    "adresse": "6 All. Ariane, 64140 Lons",
+    "telephone": "0559327272",
+    "email": "",
+    "horaires": {
+      "jeudi": "09:00–18:00",
+      "lundi": "09:00–18:00",
+      "mardi": "09:00–18:00",
+      "samedi": "09:00–18:00",
+      "dimanche": "Fermé",
+      "mercredi": "09:00–18:00",
+      "vendredi": "09:00–18:00"
+    },
+    "coordonnees": {
+      "lat": 43.3397038,
+      "lng": -0.3967269
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-04-03T09:46:55.612681+00:00"
+  },
+  {
+    "id": 82,
+    "nom": "Pasion Flamenca",
+    "secteur": "École de danse",
+    "description": "École de danse",
+    "adresse": "10 ter Bd des Frères Farman, 64140 Lons",
+    "telephone": "",
+    "email": "",
+    "horaires": {
+      "jeudi": "",
+      "lundi": "",
+      "mardi": "",
+      "samedi": "",
+      "dimanche": "",
+      "mercredi": "",
+      "vendredi": ""
+    },
+    "coordonnees": {
+      "lat": 43.3287727,
+      "lng": -0.3966974
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-04-03T09:38:19.54024+00:00"
+  },
+  {
+    "id": 85,
+    "nom": "LOLITA",
+    "secteur": "Vendeur de vêtements",
+    "description": "",
+    "adresse": "Place des 7 cantons, 94 Rue Emile Guichenné, 64000 Pau",
+    "telephone": "0559273391",
+    "email": "",
+    "horaires": {
+      "jeudi": "10:00–19:00",
+      "lundi": " Fermé",
+      "mardi": "10:00–12:30 / 14:00–19:00",
+      "samedi": "10:00–19:00",
+      "dimanche": " Fermé",
+      "mercredi": "10:00–19:00",
+      "vendredi": "10:00–19:00"
+    },
+    "coordonnees": {
+      "lat": 43.29457,
+      "lng": -0.436269
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-04-06T02:38:36.32609+00:00"
+  },
+  {
+    "id": 88,
+    "nom": "BISTROCHOK",
+    "secteur": "Restaurant",
+    "description": "Restaurant pâtisserie",
+    "adresse": "6 Rue Henri IV 64000 Pau",
+    "telephone": "05 24 36 04 18",
+    "email": "",
+    "horaires": {
+      "jeudi": "",
+      "lundi": "",
+      "mardi": "",
+      "samedi": "",
+      "dimanche": "",
+      "mercredi": "",
+      "vendredi": ""
+    },
+    "coordonnees": {
+      "lat": 43.2947118,
+      "lng": -0.3742974
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-04-08T09:42:25.028608+00:00"
+  },
+  {
+    "id": 87,
+    "nom": "BERGER RETAIL SPORTS",
+    "secteur": "Vendeur articles de sport",
+    "description": "",
+    "adresse": "28 Rue des Cordeliers 64000 Pau",
+    "telephone": "05 59 16 35 84",
+    "email": "thenorthface.pau@gmail.com",
+    "horaires": {
+      "jeudi": "",
+      "lundi": "",
+      "mardi": "",
+      "samedi": "",
+      "dimanche": "",
+      "mercredi": "",
+      "vendredi": ""
+    },
+    "coordonnees": {
+      "lat": 43.2973887,
+      "lng": -0.3742844
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-04-08T09:16:27.791892+00:00"
+  },
+  {
+    "id": 86,
+    "nom": "1988 ALL STAR BARBER",
+    "secteur": "Coiffeur",
+    "description": "Barbier",
+    "adresse": "48 Bis Rue Montpensier 64000 Pau",
+    "telephone": "06 52 37 46 37",
+    "email": "",
+    "horaires": {
+      "jeudi": "",
+      "lundi": "",
+      "mardi": "",
+      "samedi": "",
+      "dimanche": "",
+      "mercredi": "",
+      "vendredi": ""
+    },
+    "coordonnees": {
+      "lat": 43.3021385,
+      "lng": -0.3765706
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-04-08T08:45:35.912919+00:00"
+  },
+  {
+    "id": 89,
+    "nom": "Hortense",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "18 Bd Charles de Gaulle, 64140 Lons",
+    "telephone": "0559682455",
+    "email": "",
+    "horaires": {
+      "jeudi": "07:00–19:00",
+      "lundi": "07:00–19:00",
+      "mardi": "07:00–19:00",
+      "samedi": "07:00–19:00",
+      "dimanche": "Fermé",
+      "mercredi": "07:00–19:00",
+      "vendredi": "07:00–12:30"
+    },
+    "coordonnees": {
+      "lat": 43.3081497,
+      "lng": -0.4062748
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-05-03T23:13:53.012209+00:00"
+  },
+  {
+    "id": 90,
+    "nom": "Chez ARLINDO",
+    "secteur": "Restaurant",
+    "description": "",
+    "adresse": "Av. Frédéric et Irène Joliot Curie, 64140 Lons",
+    "telephone": "0533113402",
+    "email": "",
+    "horaires": {
+      "jeudi": "08:00–19:00",
+      "lundi": "Fermé",
+      "mardi": "08:00–19:00",
+      "samedi": "08:00–22:30",
+      "dimanche": "09:00–15:00",
+      "mercredi": "08:00–19:00",
+      "vendredi": "08:00–22:00"
+    },
+    "coordonnees": {
+      "lat": 43.3067583,
+      "lng": -0.4246387
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-05-15T16:47:36.577627+00:00"
+  },
+  {
+    "id": 91,
+    "nom": "fake",
+    "secteur": "Accordeur de pianos",
+    "description": "",
+    "adresse": "pau",
+    "telephone": "",
+    "email": "",
+    "horaires": {
+      "jeudi": "",
+      "lundi": "",
+      "mardi": "",
+      "samedi": "",
+      "dimanche": "",
+      "mercredi": "",
+      "vendredi": ""
+    },
+    "coordonnees": {
+      "lat": null,
+      "lng": null
+    },
+    "statut_prospection": "prospect",
+    "contact_nom": "",
+    "contrat_type": "",
+    "date_contact": null,
+    "date_relance": null,
+    "note": "",
+    "statut_site": null,
+    "created_at": "2026-05-26T02:38:47.278091+00:00"
+  }
+]

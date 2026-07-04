@@ -1,0 +1,17 @@
+// --- GLOBAL TOKENS ---
+$font-main: 'Inter', sans-serif;
+$font-title: 'Outfit', sans-serif;
+$font-serif: 'Playfair Display', serif;
+$font-retro: 'Courier Prime', monospace;
+$font-street: 'Syncopate', sans-serif;
+
+$transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+$container-width: 1100px;
+
+// --- CSS VARIABLES (Sync from index.scss) ---
+:root {
+  --font-main: #{$font-main};
+  --font-title: #{$font-title};
+  --transition: #{$transition-smooth};
+  --container-width: #{$container-width};
+}

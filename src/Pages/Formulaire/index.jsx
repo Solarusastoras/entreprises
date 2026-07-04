@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import { useEntreprises } from "../../Utils/hooks/magasin.js";
-import { supabase } from "../../supabaseClient.js";
+// Import supabase supprimé
 import {
   validerEmail,
   validerTelephone,
@@ -152,7 +152,7 @@ export default function Formulaire() {
       ? Number(modifierIdParam)
       : null;
 
-  const { ajouterEntreprise, modifierEntreprise } = useEntreprises();
+  const { ajouterEntreprise, modifierEntreprise, entreprises, chargement: chargementMagasin } = useEntreprises();
 
   const [form, setForm] = useState(champVide());
   const [erreurs, setErreurs] = useState({});
@@ -163,43 +163,38 @@ export default function Formulaire() {
   useEffect(() => {
     if (!modifierId) return;
 
-    async function charger() {
+    if (chargementMagasin) {
       setChargement(true);
-
-      const { data, error } = await supabase
-        .from("entreprises")
-        .select("*")
-        .eq("id", modifierId)
-        .single();
-
-      if (!error && data) {
-        setForm({
-          nom: data.nom || "",
-          secteur: data.secteur || "",
-          description: data.description || "",
-          adresse: data.adresse || "",
-          telephone: data.telephone || "",
-          email: data.email || "",
-          horaires: { ...HORAIRE_VIDE, ...(data.horaires || {}) },
-          coordonnees: {
-            lat: data.coordonnees?.lat || "",
-            lng: data.coordonnees?.lng || "",
-          },
-          statut_prospection: data.statut_prospection || "prospect",
-          statut_site: data.statut_site || "",
-          contact_nom: data.contact_nom || "",
-          contrat_type: data.contrat_type || "",
-          date_contact: data.date_contact || "",
-          date_relance: data.date_relance || "",
-          note: data.note || "",
-        });
-      }
-
-      setChargement(false);
+      return;
     }
 
-    charger();
-  }, [modifierId]);
+    const data = entreprises.find(e => e.id.toString() === modifierId.toString());
+
+    if (data) {
+      setForm({
+        nom: data.nom || "",
+        secteur: data.secteur || "",
+        description: data.description || "",
+        adresse: data.adresse || "",
+        telephone: data.telephone || "",
+        email: data.email || "",
+        horaires: { ...HORAIRE_VIDE, ...(data.horaires || {}) },
+        coordonnees: {
+          lat: data.coordonnees?.lat || "",
+          lng: data.coordonnees?.lng || "",
+        },
+        statut_prospection: data.statut_prospection || "prospect",
+        statut_site: data.statut_site || "",
+        contact_nom: data.contact_nom || "",
+        contrat_type: data.contrat_type || "",
+        date_contact: data.date_contact || "",
+        date_relance: data.date_relance || "",
+        note: data.note || "",
+      });
+    }
+
+    setChargement(false);
+  }, [modifierId, entreprises, chargementMagasin]);
 
   const set = (c, v) => {
     setForm((p) => ({ ...p, [c]: v }));

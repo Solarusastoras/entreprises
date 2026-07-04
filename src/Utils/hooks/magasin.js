@@ -1,5 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
-import { supabase } from '../../supabaseClient';
+import { 
+  getEntreprises as fetchNasEntreprises, 
+  createEntreprise, 
+  updateEntreprise as updateNasEntreprise, 
+  deleteEntreprise as deleteNasEntreprise 
+} from '../nasApi';
 
 export function useEntreprises() {
   const [entreprises, setEntreprises] = useState([]);
@@ -10,15 +15,15 @@ export function useEntreprises() {
   useEffect(() => {
     async function charger() {
       setChargement(true);
-      const { data, error } = await supabase
-        .from('entreprises')
-        .select('*')
-        .order('created_at', { ascending: false });
-
-      if (error) {
+      try {
+        const data = await fetchNasEntreprises();
+        // On trie du plus récent au plus ancien, en s'assurant qu'ils ont une date de création
+        const sortedData = (data || []).sort((a, b) => {
+          return new Date(b.created_at || Date.now()) - new Date(a.created_at || Date.now());
+        });
+        setEntreprises(sortedData);
+      } catch (error) {
         setErreur(error.message);
-      } else {
-        setEntreprises(data);
       }
       setChargement(false);
     }
@@ -27,45 +32,45 @@ export function useEntreprises() {
 
   // Récupérer une entreprise par id
   const getEntreprise = useCallback(
-    (id) => entreprises.find((e) => e.id === Number(id)),
+    (id) => entreprises.find((e) => e.id.toString() === id.toString()),
     [entreprises]
   );
 
   // Ajouter
   const ajouterEntreprise = useCallback(async (data) => {
-    const { data: nouvelle, error } = await supabase
-      .from('entreprises')
-      .insert([data])
-      .select()
-      .single();
-
-    if (error) { console.error(error); return null; }
-    setEntreprises((prev) => [nouvelle, ...prev]);
-    return nouvelle.id;
+    try {
+      const dataWithTimestamp = { ...data, created_at: new Date().toISOString() };
+      const nouvelle = await createEntreprise(dataWithTimestamp);
+      if (!nouvelle) throw new Error("Erreur lors de la création.");
+      
+      setEntreprises((prev) => [nouvelle, ...prev]);
+      return nouvelle.id;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
   }, []);
 
   // Modifier
   const modifierEntreprise = useCallback(async (id, data) => {
-    const { error } = await supabase
-      .from('entreprises')
-      .update(data)
-      .eq('id', Number(id));
-
-    if (error) { console.error(error); return; }
-    setEntreprises((prev) =>
-      prev.map((e) => (e.id === Number(id) ? { ...e, ...data } : e))
-    );
+    try {
+      await updateNasEntreprise(id.toString(), data);
+      setEntreprises((prev) =>
+        prev.map((e) => (e.id.toString() === id.toString() ? { ...e, ...data } : e))
+      );
+    } catch (error) {
+      console.error(error);
+    }
   }, []);
 
   // Supprimer
   const supprimerEntreprise = useCallback(async (id) => {
-    const { error } = await supabase
-      .from('entreprises')
-      .delete()
-      .eq('id', Number(id));
-
-    if (error) { console.error(error); return; }
-    setEntreprises((prev) => prev.filter((e) => e.id !== Number(id)));
+    try {
+      await deleteNasEntreprise(id.toString());
+      setEntreprises((prev) => prev.filter((e) => e.id.toString() !== id.toString()));
+    } catch (error) {
+      console.error(error);
+    }
   }, []);
 
   return {

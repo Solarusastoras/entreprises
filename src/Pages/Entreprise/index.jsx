@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { supabase } from '../../supabaseClient.js';
+// Import supabase supprimé
 import { useEntreprises } from '../../Utils/hooks/magasin.js';
 import {
   iconeParSecteur, estOuvert, JOURS_SEMAINE, jourActuel,
@@ -13,24 +13,20 @@ const MapView = lazy(() => import('../../Composant/MapView/index.jsx'));
 export default function Entreprise() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { supprimerEntreprise } = useEntreprises();
+  const { supprimerEntreprise, entreprises, chargement: chargementMagasin } = useEntreprises();
 
   const [e, setE] = useState(null);
   const [chargement, setChargement] = useState(true);
 
   useEffect(() => {
-    async function charger() {
+    if (chargementMagasin) {
       setChargement(true);
-      const { data, error } = await supabase
-        .from('entreprises')
-        .select('*')
-        .eq('id', Number(id))
-        .single();
-      if (!error) setE(data);
-      setChargement(false);
+      return;
     }
-    charger();
-  }, [id]);
+    const data = entreprises.find(ent => ent.id.toString() === id.toString());
+    setE(data);
+    setChargement(false);
+  }, [id, entreprises, chargementMagasin]);
 
   if (chargement) return (
     <div style={{padding:'3rem',textAlign:'center',color:'var(--c-ink3)'}}>Chargement…</div>

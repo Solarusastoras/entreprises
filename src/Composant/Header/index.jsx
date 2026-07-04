@@ -11,9 +11,8 @@ export default function Header() {
   return (
     <header className="header">
       <div className="headerInner">
-
         <Link to="/" className="logo">
-          <img src="/entreprises.png" alt="Entreprise" className="logoImage" />
+          <img src={process.env.PUBLIC_URL + "/logo192.png"} alt="Entreprise" className="logoImage" />
           <span className="logoTexte">Entreprises</span>
         </Link>
 

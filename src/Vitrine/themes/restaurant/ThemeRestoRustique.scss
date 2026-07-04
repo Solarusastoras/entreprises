@@ -1,0 +1,321 @@
+.theme-resto-rustique {
+  background: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  padding: 0 5%;
+
+  header {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      font-family: Bitter, serif;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-weight: 700;
+      font-size: 0.9rem;
+
+      span {
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: var(--primary);
+        }
+      }
+    }
+  }
+
+  .rustique-top-header {
+    padding: 60px 0;
+    text-align: center;
+
+    .tag {
+      font-size: 1.2rem;
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 4px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      font-family: Bitter, serif;
+    }
+
+    .divider {
+      width: 100px;
+      height: 4px;
+      background: var(--primary);
+      margin: 30px auto;
+    }
+  }
+
+  .rustique-hero {
+    padding: 80px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    align-items: center;
+
+    .img-col {
+      flex: 1 1 500px;
+      position: relative;
+
+      &.editable:hover {
+        .edit-overlay {
+          opacity: 1;
+        }
+      }
+
+      img {
+        width: 100%;
+        border-radius: 40px;
+        box-shadow: 20px 20px 0 var(--primary);
+      }
+
+      .edit-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(40, 54, 24, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.5rem;
+        border-radius: 40px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+    }
+
+    .text-col {
+      flex: 1 1 400px;
+
+      h2 {
+        font-size: 3rem;
+        margin-bottom: 30px;
+      }
+
+      p {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .rustique-table-section {
+    padding: 100px 0;
+    background: var(--bg-card);
+    border-radius: 60px;
+    margin: 100px 0;
+
+    .section-title-box {
+      text-align: center;
+      margin-bottom: 80px;
+
+      h2 {
+        font-size: 3.5rem;
+        font-family: Bitter, serif;
+      }
+    }
+
+    .table-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+      padding: 0 40px;
+    }
+
+    .table-item {
+      text-align: center;
+      position: relative;
+
+      &.editable {
+        cursor: pointer;
+        &:hover {
+          .img-wrapper .edit-overlay {
+            opacity: 1;
+          }
+        }
+      }
+
+      .img-wrapper {
+        height: 300px;
+        border-radius: 30px;
+        overflow: hidden;
+        margin-bottom: 25px;
+        border: 8px solid white;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .edit-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(40, 54, 24, 0.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          opacity: 0;
+          transition: opacity 0.2s;
+          pointer-events: none;
+        }
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .price {
+        font-size: 1.1rem;
+        color: var(--primary);
+        font-weight: 900;
+      }
+    }
+  }
+
+  .contact-section {
+    padding: 100px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 60px;
+
+    .info-box {
+      background: rgba(255, 255, 255, 0.5);
+      padding: 60px;
+      border-radius: 40px;
+      border: 2px dashed var(--primary);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        font-family: Bitter, serif;
+        color: #283618;
+      }
+
+      .horaires-list {
+        margin-bottom: 40px;
+
+        .horaire-item {
+          display: flex;
+          justify-content: space-between;
+          padding: 15px 0;
+          border-bottom: 1px solid rgba(0,0,0,0.05);
+          font-size: 1.2rem;
+
+          .day {
+            text-transform: capitalize;
+            font-weight: 500;
+          }
+
+          .hours {
+            color: var(--primary);
+            font-weight: 800;
+          }
+        }
+      }
+
+      .address-tag {
+        padding: 20px;
+        background: #fefae0;
+        border-radius: 20px;
+        border-left: 5px solid var(--primary);
+
+        strong {
+          display: block;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    .map-wrapper {
+      border-radius: 40px;
+      overflow: hidden;
+      border: 5px solid #fff;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+
+      iframe {
+        border: 0;
+        filter: sepia(0.2) contrast(0.9);
+      }
+    }
+  }
+
+  footer {
+    padding: 80px 0;
+    text-align: center;
+    opacity: 0.6;
+
+    .icon-coffee {
+      margin-bottom: 30px;
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      opacity: 0.3;
+    }
+  }
+
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 768px) {
+    .rustique-top-header {
+      padding: 40px 0;
+      h1 { font-size: 2.22rem; }
+    }
+
+    .rustique-hero {
+      padding: 40px 0;
+      gap: 30px;
+      .img-col img { border-radius: 20px; box-shadow: 10px 10px 0 var(--primary); }
+      .text-col {
+        text-align: center;
+        h2 { font-size: 2rem; margin-bottom: 20px; }
+        p { font-size: 1.1rem; }
+      }
+    }
+
+    .rustique-table-section {
+      padding: 60px 0;
+      margin: 40px 0;
+      border-radius: 30px;
+      .section-title-box h2 { font-size: 2.2rem; }
+      .table-grid { padding: 0 20px; grid-template-columns: 1fr; }
+    }
+
+    .contact-section {
+      padding: 60px 0;
+      grid-template-columns: 1fr;
+      .info-box { padding: 30px 20px; h2 { font-size: 2rem; } .horaires-list .horaire-item { font-size: 1rem; } }
+      .map-wrapper { height: 300px; }
+    }
+  }
+}

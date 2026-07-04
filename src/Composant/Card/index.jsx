@@ -101,7 +101,26 @@ export default function Card({ entreprise }) {
       {/* Note */}
       {note && <p className="cardNote">"{note}"</p>}
 
-      <span className="voirPlus">Voir la fiche →</span>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span className="voirPlus">Voir la fiche →</span>
+        <button 
+          onClick={(e) => {
+            e.preventDefault(); // Empêche de cliquer sur la Link de la carte
+            window.open(`#/vitrine?id=${id}`, '_blank'); // Ouvre la vitrine dans un nouvel onglet
+          }}
+          style={{
+            background: 'var(--primary-color, #4A90E2)',
+            color: 'white',
+            border: 'none',
+            padding: '4px 10px',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontSize: '0.85rem'
+          }}
+        >
+          Voir sa vitrine 🎨
+        </button>
+      </div>
     </Link>
   );
 }

@@ -1,0 +1,361 @@
+@use './base/variables';
+
+// Transitions and Blur
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 100000;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+}
+
+.modal-content {
+  position: relative;
+  inset: auto !important;
+  width: 95%;
+  max-width: 600px;
+  max-height: 95vh;
+  padding: 40px;
+  border-radius: 40px;
+  border: none;
+  background: #fff;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  outline: none;
+
+  &.modal-wide {
+    max-width: 1100px;
+    max-height: 90vh;
+  }
+
+  .btn-close-circle {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: #f5f5f5;
+    color: #000;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #eee;
+    }
+  }
+
+  .btn-close-pill {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: #f5f5f5;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-weight: 800;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #eee;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: #000;
+
+    &.title-huge {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+  }
+
+  .form-grid {
+    display: grid;
+    gap: 25px;
+  }
+
+  .img-upload-box {
+    height: 220px;
+    background: #f8f8f8;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 3px dashed #eee;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .placeholder {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.2;
+      font-weight: 900;
+      flex-direction: column;
+      gap: 10px;
+
+      span {
+        font-size: 2rem;
+      }
+    }
+
+    input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .loader-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      color: #000;
+    }
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+      font-size: 0.7rem;
+      font-weight: 900;
+      opacity: 0.4;
+      text-transform: uppercase;
+      color: #000;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 18px;
+      border-radius: 15px;
+      border: 2px solid #eee;
+      font-size: 1rem;
+      font-weight: 700;
+      outline: none;
+      color: #000;
+      background: #fff;
+
+      &::placeholder {
+        color: #ccc;
+      }
+
+      &:focus {
+        border-color: #000;
+      }
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: none;
+      font-family: inherit;
+    }
+
+    .input-tag {
+      color: #ff4400;
+    }
+  }
+
+  .form-row {
+    display: flex;
+    gap: 20px;
+
+    .input-group {
+      flex: 1;
+    }
+  }
+
+  .modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+
+    button {
+      padding: 20px;
+      border-radius: 20px;
+      border: none;
+      font-weight: 900;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform 0.2s, background 0.2s;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+
+    .btn-cancel {
+      flex: 1;
+      background: #f5f5f5;
+      color: #666;
+    }
+
+    .btn-save {
+      flex: 2;
+      background: #00cc66;
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(0, 204, 102, 0.3);
+    }
+
+    .btn-danger {
+      background: #ff4444;
+      color: #fff;
+    }
+
+    .btn-full {
+      width: 100%;
+      background: #000;
+      color: #fff;
+    }
+  }
+
+  .title-admin {
+    color: #00ccff;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+  }
+
+  .client-connected-msg {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #000;
+  }
+}
+
+// Catalogue Specific
+.products-list {
+  display: grid;
+  gap: 25px;
+
+  .product-row {
+    display: grid;
+    grid-template-columns: 140px 1fr 1.5fr 80px;
+    gap: 30px;
+    align-items: start;
+    padding: 30px;
+    background: #fcfcfc;
+    border-radius: 30px;
+    border: 1px solid #eee;
+
+    @media (max-width: 768px) {
+       grid-template-columns: 1fr;
+    }
+
+    .img-col {
+      text-align: center;
+
+      .img-preview {
+        width: 140px;
+        height: 140px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .btn-photo-label {
+        display: block;
+        color: #fff;
+        padding: 10px;
+        font-size: 0.7rem;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 800;
+        background: #000;
+        transition: opacity 0.2s;
+
+        &:hover { opacity: 0.8; }
+
+        &.loading {
+          background: #eee !important;
+          color: #666 !important;
+        }
+      }
+    }
+
+    .fields-col {
+      display: grid;
+      gap: 15px;
+    }
+
+    .desc-col {
+      label {
+        font-size: 0.65rem;
+        opacity: 0.4;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #000;
+        margin-bottom: 5px;
+        display: block;
+      }
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+        border: 2px solid #eee;
+        font-weight: 600;
+        min-height: 100px;
+        outline: none;
+        resize: none;
+        font-size: 0.9rem;
+        color: #000;
+        background: #fff;
+      }
+    }
+
+    .delete-col {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      .btn-delete {
+        background: #ffeeee;
+        color: #ff0000;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+
+        &:hover { background: #ffdada; }
+      }
+    }
+  }
+}
