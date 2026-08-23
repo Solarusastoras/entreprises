@@ -69,12 +69,20 @@ export default function ThemeRestoRustique({ siteData, products, isEditable, onE
                     onClick={() => isEditable && onEditProduct(p)}
                   >
                     <div className="img-wrapper">
-                      <img src={p.img || p.image_url} alt={p.nom} />
+                      <img src={p.img || p.image_url} alt={p.nom || p.name} />
                       <FavoriteButton productId={p.id} />
-                      {isEditable && <div className="edit-overlay">✏️</div>}
+                      {p.tag && <span className="rustique-tag">{p.tag}</span>}
+                      {isEditable && <div className="edit-overlay">✏️ Modifier</div>}
                     </div>
-                    <h3>{p.nom || p.name}</h3>
-                    <p className="price">{p.prix || "21"}€</p>
+                    <div className="item-details">
+                      <div className="title-price-row">
+                        <h4>{p.nom || p.name}</h4>
+                        <span className="price">{p.prix || "21"}€</span>
+                      </div>
+                      {(p.desc || p.description) && (
+                        <p className="desc">{p.desc || p.description}</p>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
