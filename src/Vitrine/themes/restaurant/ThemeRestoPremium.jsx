@@ -49,6 +49,7 @@ export default function ThemeRestoPremium({ siteData, products, isEditable, onEd
             ) : (
               <div className="placeholder-img">Sélectionnez un Plat du Jour</div>
             )}
+            {platDuJour && <FavoriteButton productId={platDuJour.id} />}
             {isEditable && platDuJour && <div className="edit-overlay">✏️ Modifier</div>}
           </div>
           <div className="review-badge">

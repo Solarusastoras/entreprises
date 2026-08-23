@@ -26,3 +26,30 @@
     margin-top: 70px;
   }
 }
+
+.favorite-btn {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  padding: 0;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.active {
+    background: #ff4757;
+    color: #fff;
+    border-color: #ff4757;
+  }
+}
