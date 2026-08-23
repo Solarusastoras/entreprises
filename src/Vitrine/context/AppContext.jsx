@@ -114,6 +114,34 @@ export function AppProvider({ children }) {
     fetchEntreprises();
   }, [currentMetier]);
 
+  const ORDRE_JOURS = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'];
+  const ordonnerHoraires = (rawHoraires) => {
+    if (!rawHoraires) return {};
+    let parsed = rawHoraires;
+    try {
+      if (typeof rawHoraires === 'string') parsed = JSON.parse(rawHoraires);
+    } catch {
+      return {};
+    }
+    if (!parsed || typeof parsed !== 'object') return {};
+
+    const sorted = {};
+    ORDRE_JOURS.forEach((jour) => {
+      const key = Object.keys(parsed).find(k => k.toLowerCase() === jour);
+      if (key && parsed[key]) {
+        sorted[jour] = parsed[key];
+      }
+    });
+
+    Object.keys(parsed).forEach((k) => {
+      if (!ORDRE_JOURS.includes(k.toLowerCase()) && parsed[k]) {
+        sorted[k] = parsed[k];
+      }
+    });
+
+    return sorted;
+  };
+
   const siteData = selectedEnterprise ? {
     ...selectedEnterprise,
     selectedStyle: currentStyle,
@@ -123,7 +151,7 @@ export function AppProvider({ children }) {
     descriptionCourte: selectedEnterprise.description_courte || 
                        (selectedEnterprise.secteur === 'Boulangerie' ? "L'excellence artisanale au service de votre gourmandise." : "Votre professionnel de confiance."),
     descriptionLongue: selectedEnterprise.description || "Bienvenue sur notre site vitrine premium.",
-    horaires: typeof selectedEnterprise.horaires === 'string' ? JSON.parse(selectedEnterprise.horaires) : selectedEnterprise.horaires || {},
+    horaires: ordonnerHoraires(selectedEnterprise.horaires),
     mapsIframeUrl: `https://maps.google.com/maps?q=${selectedEnterprise.adresse}&z=15&output=embed`,
     telephone: selectedEnterprise.telephone,
     email: selectedEnterprise.email,
